@@ -1,19 +1,28 @@
 :root {
-    --font-headline: Poppins, sans-serif;
-    --font-sans: Comfortaa, "Open Sans", sans-serif;
-    --font-mono: "JetBrains Mono", Roboto Mono, monospace;
+  --font-headline: Poppins, sans-serif;
+  --font-sans: Comfortaa, "Open Sans", sans-serif;
+  --font-mono: "JetBrains Mono", Roboto Mono, monospace;
 
-    --hover-color: rgb(33, 30, 109);
+  --hover-color: rgb(33, 30, 109);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
 }
 
 h1, h2, h3 {
-    font-family: var(--font-headline);
+  font-family: var(--font-headline);
 }
 
 body {
-    font-family: var(--font-sans);
+  font-family: var(--font-sans);
+  margin: 0;
 }
 
-*, ::before, ::after {
-    box-sizing: inherit;
+main, section, div {
+    display: block;
 }
