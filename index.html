@@ -9,36 +9,52 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/nav.css">
+        <link rel="stylesheet" href="styles/home.css">
 
         <script src="script.js"></script>
     </head>
     <body>
-        <header class="nav">
-            <a href="index.html" class="logo"><img src="logo/ThorVG-simple.svg" alt="Home" /></a>
-            <nav class="menu">
-                <a href="about.html" class="menu-item"><span class="menu-bg">About</span></a>
-                <a href="tutorial.html" class="menu-item"><span class="menu-bg">Tutorial</span></a>
-                <a href="reference.html" class="menu-item"><span class="menu-bg">Reference</span></a>
-                <a href="docs.html" class="menu-item"><span class="menu-bg">Docs</span></a>
-                <a href="https://github.com/thorvg/thorvg/releases" target="_blank" rel="noopener noreferrer" class="menu-item">
-                    <span class="menu-bg">Releases<svg xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="25" viewBox="0 0 24 25" stroke="currentColor" role="presentation"><path d="M7 17.0293L17 7.0293"></path><path d="M7 7.0293H17V17.0293"></path></svg></span>
-                </a>
-                <a href="viewer.html" class="menu-item is-selected"><span class="menu-bg">Viewer</span></a>
-            </nav>
-        </header>
+        <header class="nav"></header>
 
-        <nav>
-            <!-- Navigation menu -->
+        <!-- Navigation menu -->
+        <nav class="side-menu">
+            <ul>
+                <li><a class="menu-item" href="about.html"><span>About</span><span class="framer-text">→</span></a></li>
+                <li><a class="menu-item" href="tutorial.html"><span>Tutorial</span><span class="framer-text">→</span></a></li>
+                <li><a class="menu-item" href="reference.html"><span>Reference</span><span class="framer-text">→</span></a></li>
+                <li><a class="menu-item" href="docs.html"><span>Docs</span><span class="framer-text">→</span></a></li>
+                <li><a class="menu-item" href="https://github.com/thorvg/thorvg/releases"><span>Releases</span><span class="framer-text">→</span></a></li>
+                <li><a class="menu-item" href="viewer.html"><span>ThorVG Viewer</span><span class="framer-text">→</span></a></li>
+            </ul>
         </nav>
+
         <main class="main-layout">
-            <h1>주요 제목</h1>
-            <p>주요 내용...</p>
-            <!-- Else... -->
+            <div class="main-content">
+                <div class="columns">
+                    <div class="margin-bottom margin-small-medium">
+                        <h1 class="header-h1" style="font-size: 6vw;">
+                            <span class="thor-text">THOR </span>
+                            <span class="header-h1-linebreak">Vector Graphics</span>
+                        </h1>
+                    </div>
+                    <div class="margin-bottom margin-large">
+                        <h2 class="header-h2">Super Lightweight Engine</h2>
+                    </div>
+                    <div>
+                        <div class="text-body"><p>Thor Vector Graphics is an open-source, lightweight, and portable library designed for rendering vector-based scenes and animations, including SVG and Lottie formats. It offers user-friendly APIs, making it versatile for use across different software platforms and applications to visualize graphical content. As the vector graphics rendering engine for Tizen OS, Godot Platform, LVGL, Lottie Creator and the dotLottie player, ThorVG powers a wide range of products.</p></div>
+                    </div>
+                </div>
+                <div class="w-layout-hflex buttons-wrapper is-relative">
+                    <a href="about.html" class="button-content is-large-primary click_demo w-inline-block">
+                        <div>Learn More</div>
+                    </a>
+                </div>
+            </div>
         </main>
+
         <footer>
         </footer>
     </body>
