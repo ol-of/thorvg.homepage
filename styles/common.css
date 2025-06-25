@@ -3,7 +3,25 @@
   --font-sans: Comfortaa, "Open Sans", sans-serif;
   --font-mono: "JetBrains Mono", Roboto Mono, monospace;
 
-  --hover-color: rgb(33, 30, 109);
+  --primary-color: #212121;
+  --secondary-color: rgb(69 65 62);
+  --hover-color: yellow;
+  --background-color: #fff;
+  --content-background-color: #fff;
+  --accent-color: #AFF4FF; /* AFF4FF */
+
+  --code-border-radius: 6px;
+  --code-border-color: rgba(0, 0, 0, 0.08);
+
+  --code-color-keyword: oklch(53.5% 0.2058 2.84);
+  --code-color-classname: #005cc5;
+  --code-color-function: oklch(47.18% 0.2579 304);
+  --code-color-comment: #666;
+  --code-color-string: #22863a;
+  --code-color-number: #f75c5c;
+
+  --nav-color: black;
+  --nav-background-color: white;
 }
 
 html {
@@ -20,9 +38,69 @@ h1, h2, h3 {
 
 body {
   font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 400;
   margin: 0;
 }
 
 main, section, div {
     display: block;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.w-4 {
+    width: calc(var(--spacing) * 4);
+}
+
+.px-10 {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+.px-5 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+.py-6 {
+    padding-bottom: 3rem !important;
+    padding-top: 3rem !important;
+}
+
+.py-5 {
+    padding-bottom: 1.5rem !important;
+    padding-top: 1.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+/*
+a:link {
+  color: #42A5F5;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #EA80FC;
+  text-decoration: none;
+}
+
+a:link:hover {
+  color: #1565C0;
+}
+
+a:visited:hover {
+  color: #8E24AA;
+}
+*/

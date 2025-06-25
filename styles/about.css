@@ -1,0 +1,118 @@
+
+.example-image-wrapper {
+  width: 100%
+}
+
+.example-image-wrapper {
+  display: inline-block;   /* 자식 높이에 맞게 wrapper 크기 조절 */
+  width: 100%;             /* 너비는 부모에 맞춤 */
+  text-align: center;      /* 자식(img)을 가운데 정렬 */
+}
+
+.example-image-wrapper img {
+  display: inline-block;   /* center 정렬 위해 필요 */
+  /*max-width: 100%;*/         /* 반응형 이미지 설정 (선택사항) */
+  /*height: auto;*            /* 이미지 원본 비율 유지 */
+}
+
+.logo-lottie-files {
+  width: 20rem;
+  object-fit: contain;
+}
+
+/* 영상 중앙 */
+
+.example-container {
+  width: 100%;
+  margin: 1.5rem 0;
+  box-sizing: border-box; /* padding 포함 너비 계산을 위해 */
+}
+
+.sample {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  box-sizing: border-box; /* padding과 border가 width에 포함되도록 */
+}
+
+.sample video, .example-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* In practice layout */
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;  /* 공간이 부족할 때 요소가 줄어들거나 오버플로우 */
+  width: 100%;
+  margin: 0.5em 0;
+  box-sizing: border-box; /* 중요! */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: column; /* 기본 세로 배치 */
+}
+
+.col-lg-3 {
+  align-self: stretch;
+}
+
+.col-lg-3 h3 {
+    margin-top: 0.75em;
+}
+
+.col-lg-7 img {
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .row {
+    flex-direction: row; /* 가로 배치 */
+  }
+
+  .col-lg-3 {
+    width: 30%;
+    max-width: 200px;
+    padding-right: 0.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 상단 정렬 */
+  }
+
+  .col-lg-7 {
+    width: 70%;
+  }
+}
+
+.order-2 {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.img-fluid {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
