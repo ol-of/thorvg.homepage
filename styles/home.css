@@ -1,11 +1,87 @@
 :root {
-  --content-color: rgb(33, 30, 109);
+  --background-color: #F5F4FD; /* rgb(245, 243, 255); */
+  --foreground-color: #28253b; /* rgb(33, 30, 109); */
   --hover-color: rgb(36, 79, 235);
+
+  --header-height: 48px;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: var(--header-height) 0 0 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    overflow: hidden;
+    z-index: 2;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    font-size: 14px;
+}
+
+header > div {
+    width: 100%;
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+header > div > * {
+    padding: 0 4rem;
+}
+
+header .menu {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+}
+
+header a {
+    padding: 0;
+    text-decoration: none;
+    color: var(--foreground-color);
+}
+
+header a:hover {
+    color: var(--hover-color);
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* 텍스트와 이미지 사이 간격 */
+  text-decoration: none; /* 선택 사항: 밑줄 제거 */
+  color: inherit; /* 선택 사항: 링크 색상 상속 */
+}
+
+.external-link img {
+  width: 0.8em;  /* 텍스트 크기에 맞춤 */
+  height: 0.8em;
+  vertical-align: middle;
 }
 
 .main-layout {
-  background: rgb(245, 243, 255);
-  padding: 15.4rem 0px 7.3rem;
+  background: var(--background-color);
+  padding: 5.3rem 0px 5.3rem; /* top horizontal bottom */
 }
 
 .main-content {
@@ -14,7 +90,7 @@
 }
 
 h1, h2, body {
-  color: var(--content-color);
+  color: var(--foreground-color);
 }
 
 .header-h1 {
@@ -53,7 +129,7 @@ h1, h2, body {
 .text-body {
   max-width: 68rem;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 2.2rem;
   font-family: var(--font-sans);
   /*letter-spacing: -1.8800001144px;*/
@@ -180,15 +256,15 @@ p {
 }
 
 .button-content {
-  background-color: var(--content-color);
-  color: white;
+  background-color: var(--foreground-color);
+  color: var(--background-color);
   text-align: center;
   border-radius: 8rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
   text-decoration: none;
   transition: all .2s ease-in-out;
-  font-family: "Poppins";
+  font-family: var(--font-sans);
   margin-bottom: 100px;
   margin-top: 3rem;
 }
@@ -206,11 +282,11 @@ p {
   padding: 1.15rem 1.75rem;
   font-size: 1.5rem;
   display: flex;
-  box-shadow: 0 4px 8px rgba(33, 30, 109, 0.3);
 }
 
 .button-content.is-large-primary:hover {
   transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 진입 시 올라오며 나타나는 효과 */
