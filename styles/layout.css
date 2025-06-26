@@ -98,11 +98,7 @@
 }
 
 /* Tablet ~ */
-@media print, screen and (min-width: 769px) {
-    .columns:not(.is-desktop) {
-        display: flex;
-    }
-
+@media print, screen and (min-width: 1025px) {
     .column.is-9 {
         flex: none;
         width: 75%;
@@ -120,7 +116,7 @@
 }
 
 /* ~ Mobile */
-@media print, screen and (max-width: 768px) {
+@media print, screen and (max-width: 1024px) {
     .column.is-9 {
         flex: none;
         width: 90%;

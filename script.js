@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function toggleToTopBtn() {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
     const hasScrolled = window.scrollY > 200;
 
     if (isMobile) {

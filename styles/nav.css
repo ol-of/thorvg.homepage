@@ -171,6 +171,9 @@ ul.toc-list, .toc-children ul {
   font-weight: 500;
   border-radius: 30px;
   padding: 4px 1rem; /* left top right bottom */
+  white-space: nowrap; /* 줄바꿈 안 함 */
+  overflow: hidden; /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 말줄임표(...) 처리 */
 }
 
 .toc-children-list a {
@@ -201,10 +204,6 @@ ul.toc-list, .toc-children ul {
   .menu-toggle, .menu-drawer {
     display: none;
   }
-
-  .content-toc {
-    display: block;
-  }
 }
 
 /* ~ Mobile */
@@ -217,20 +216,26 @@ ul.toc-list, .toc-children ul {
     display: block;
   }
 
-  .content-toc {
-      display: none;
-  }
+
 }
 
-@media print, screen and (min-width: 1024px) {
+@media print, screen and (min-width: 1025px) {
   .nav {
     padding: 0 5rem;
   }
+
+  .content-toc {
+    display: block;
+  }
 }
 
-@media print, screen and (max-width: 1023px) {
+@media print, screen and (max-width: 1024px) {
   .nav {
     padding: 0 2rem;
     margin: 0 -10px;
+  }
+
+  .content-toc {
+      display: none;
   }
 }
