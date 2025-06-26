@@ -277,6 +277,15 @@
                                     <img src="image/thorvg_threading.webp" />
                                 </div>
                             </section>
+                            <section id="smart-rendering">
+                                <h2>Smart Rendering</h2>
+                                <p>ThorVG supports smart partial rendering, enabling more efficient rendering workflows by updating only the portions of a vector scene that have changed. By internally tracking modified regions, it minimizes unnecessary redraws and optimizes overall performance. This feature delivers significant performance benefits, especially in animations and interactive graphics where only part of the scene changes between frames. By avoiding full-scene rendering, it can reduce computational workload—making it particularly well-suited for mobile and embedded systems where energy efficiency is essential. It also help to ensure smoother visual updates, especially for dynamic UIs and real-time animations, where rendering responsiveness is critical.</p>
+                                <div class="example-container px-5">
+                                    <img src="image/example_partial.png" />
+                                </div>
+                                <p>The figure above illustrates geometry changes and highlights the minimal redraw region (outlined in red) that needs to be updated. Only the modified area between the previous and current frames is selectively redrawn, significantly enhancing performance.</p>
+                                <p>For a showcase, please visit <a href="https://hermet.github.io/partial-test/" target="_blank" rel="noopener noreferrer">this page</a>, which demonstrates a partial rendering performance comparison using ThorVG's software renderer.</p>
+                            </section>
                             <section id="svg">
                                 <h2>SVG</h2>
                                 <p>ThorVG facilitates SVG (Scalable Vector Graphics) rendering via its dedicated SVG interpreter. Adhering to the <a href="https://www.w3.org/TR/SVGTiny12/" target="_blank" rel="noopener noreferrer">SVG Tiny Specification</a>, the implementation maintains a lightweight profile, rendering it particularly advantageous for embedded systems. While ThorVG comprehensively adheres to <a href="https://github.com/thorvg/thorvg/wiki/SVG-Support" target="_blank" rel="noopener noreferrer">most of the SVG Tiny specs</a>, certain features remain unsupported within the current framework. These include:</p>
@@ -317,56 +326,55 @@
                             <section id="in-practice">
                                 <h2>In Practice</h2>
                                 <p>The following list showcases various practical examples of ThorVG in use.</p>
-
-<div class="row">
-    <div class="col-lg-3"><h3>Canva iOS</h3></div>
-    <div class="col-lg-7">
-        <p><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a>, a leading visual communication platform, is a household name among creators, marketers, designers, students, and more, with millions of users worldwide. It empowers users to create stunning visual content with a user-friendly interface and a vast library of templates and design elements. The Canva iOS app transitioned from the existing Lottie animation engine to ThorVG for Lottie animations, resulting in approximately an 80% improvement in rendering speed and a 70% reduction in peak memory usage.</p>
-        <img class="img-fluid" src="image/example_canvaios.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>dotLottie</h3></div>
-    <div class="col-lg-7">
-        <p><a href="https://dotlottie.io/" target="_blank" rel="noopener noreferrer">dotLottie</a> is an open-source file format that aggregates one or more Lottie files and their associated resources, such as images and fonts, into a single file. This enables an efficient and easy distribution of animations. dotLottie files are ZIP archives compressed with the Deflate compression method and carry the file extension of “.lottie”. Think of it as a superset of Lottie. LottieFiles aims to achieve just that. <a href="https://github.com/LottieFiles/dotlottie-rs" target="_blank" rel="noopener noreferrer">dotLottie player</a> by <a href="https://lottiefiles.com/" target="_blank" rel="noopener noreferrer">LottieFiles</a> is now powered by ThorVG.</p>
-        <img class="img-fluid" src="image/example_dotlottie_edited.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>Flux Audio</h3></div>
-    <div class="col-lg-7">
-        <p><a href="https://www.flux.audio/" target="_blank" rel="noopener noreferrer">Flux</a> is a cutting-edge audio technology company specializing in high-fidelity sound systems and immersive audio experiences. With a focus on delivering precision and quality, Flux Audio leverages advanced software solutions to enhance audio processing across a wide range of devices. ThorVG is integrated into the user interface of Flux products, providing efficient and scalable vector rendering for their visual elements, ensuring a sleek and responsive user experience. This collaboration highlights ThorVG’s versatility in high-performance audio platforms.</p>
-        <img class="img-fluid" src="image/example_flux.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>Godot</h3></div>
-    <div class="col-lg-7">
-        <p>ThorVG has been integrated into the <a href="https://godotengine.org/" target="_blank" rel="noopener noreferrer">Godot</a> project to enable the creation of sleek and visually appealing user interfaces (UIs) and vector resources in the Godot game engine. Godot is a modern game engine that is both free and open-source, offering a comprehensive range of tools. With Godot, you can concentrate on developing your game without the need to recreate existing functionalities.</p>
-        <img class="img-fluid" src="image/example_godot.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>Lottie Creator</h3></div>
-    <div class="col-lg-7">
-        <p><a href="https://creator.lottiefiles.com/" target="_blank" rel="noopener noreferrer">Lottie Creator</a> is designed to create ultra-lightweight, highly customizable and interactive animations for web, apps and social. Supercharged with AI-based Motion Copilot. ThorVG is powering the Canvas engine behind Lottie Creator—enabling fast and scalable vector graphics rendering across platforms.</p>
-        <img class="img-fluid" src="image/example_creator.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>LVGL</h3></div>
-    <div class="col-lg-7">
-        <p><a href="https://lvgl.io/" target="_blank" rel="noopener noreferrer">LVGL</a> is an open-source graphics library specifically designed for embedded systems with limited resources. It is lightweight and highly customizable, providing support for graphical user interfaces (GUIs) on microcontrollers, IoT devices, and other embedded platforms. ThorVG serves as the vector drawing primitives library in the LVGL framework.</p>
-        <img class="img-fluid" src="image/example_lvgl.avif" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-3"><h3>Tizen</h3></div>
-    <div class="col-lg-7">
-        <p>ThorVG has been integrated into the <a href="https://www.tizen.org/" target="_blank" rel="noopener noreferrer">Tizen</a> platform as the vector graphics engine. <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/overview/" target="_blank" rel="noopener noreferrer">NUI</a> is the name of Tizen UI framework which is written in C#. ThorVG is the backend engine of the <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview/" target="_blank" rel="noopener noreferrer">NUI Vector Graphics</a> which is used for vector primitive drawings and scalable image contents such as SVG and Lottie Animation among the Tizen applications.</p>
-        <img class="img-fluid" src="image/tizen.avif" />
-    </div>
-</div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>Canva iOS</h3></div>
+                                    <div class="col-lg-7">
+                                        <p><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a>, a leading visual communication platform, is a household name among creators, marketers, designers, students, and more, with millions of users worldwide. It empowers users to create stunning visual content with a user-friendly interface and a vast library of templates and design elements. The Canva iOS app transitioned from the existing Lottie animation engine to ThorVG for Lottie animations, resulting in approximately an 80% improvement in rendering speed and a 70% reduction in peak memory usage.</p>
+                                        <img class="img-fluid" src="image/example_canvaios.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>dotLottie</h3></div>
+                                    <div class="col-lg-7">
+                                        <p><a href="https://dotlottie.io/" target="_blank" rel="noopener noreferrer">dotLottie</a> is an open-source file format that aggregates one or more Lottie files and their associated resources, such as images and fonts, into a single file. This enables an efficient and easy distribution of animations. dotLottie files are ZIP archives compressed with the Deflate compression method and carry the file extension of “.lottie”. Think of it as a superset of Lottie. LottieFiles aims to achieve just that. <a href="https://github.com/LottieFiles/dotlottie-rs" target="_blank" rel="noopener noreferrer">dotLottie player</a> by <a href="https://lottiefiles.com/" target="_blank" rel="noopener noreferrer">LottieFiles</a> is now powered by ThorVG.</p>
+                                        <img class="img-fluid" src="image/example_dotlottie_edited.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>Flux Audio</h3></div>
+                                    <div class="col-lg-7">
+                                        <p><a href="https://www.flux.audio/" target="_blank" rel="noopener noreferrer">Flux</a> is a cutting-edge audio technology company specializing in high-fidelity sound systems and immersive audio experiences. With a focus on delivering precision and quality, Flux Audio leverages advanced software solutions to enhance audio processing across a wide range of devices. ThorVG is integrated into the user interface of Flux products, providing efficient and scalable vector rendering for their visual elements, ensuring a sleek and responsive user experience. This collaboration highlights ThorVG’s versatility in high-performance audio platforms.</p>
+                                        <img class="img-fluid" src="image/example_flux.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>Godot</h3></div>
+                                    <div class="col-lg-7">
+                                        <p>ThorVG has been integrated into the <a href="https://godotengine.org/" target="_blank" rel="noopener noreferrer">Godot</a> project to enable the creation of sleek and visually appealing user interfaces (UIs) and vector resources in the Godot game engine. Godot is a modern game engine that is both free and open-source, offering a comprehensive range of tools. With Godot, you can concentrate on developing your game without the need to recreate existing functionalities.</p>
+                                        <img class="img-fluid" src="image/example_godot.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>Lottie Creator</h3></div>
+                                    <div class="col-lg-7">
+                                        <p><a href="https://creator.lottiefiles.com/" target="_blank" rel="noopener noreferrer">Lottie Creator</a> is designed to create ultra-lightweight, highly customizable and interactive animations for web, apps and social. Supercharged with AI-based Motion Copilot. ThorVG is powering the Canvas engine behind Lottie Creator—enabling fast and scalable vector graphics rendering across platforms.</p>
+                                        <img class="img-fluid" src="image/example_creator.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>LVGL</h3></div>
+                                    <div class="col-lg-7">
+                                        <p><a href="https://lvgl.io/" target="_blank" rel="noopener noreferrer">LVGL</a> is an open-source graphics library specifically designed for embedded systems with limited resources. It is lightweight and highly customizable, providing support for graphical user interfaces (GUIs) on microcontrollers, IoT devices, and other embedded platforms. ThorVG serves as the vector drawing primitives library in the LVGL framework.</p>
+                                        <img class="img-fluid" src="image/example_lvgl.avif" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3"><h3>Tizen</h3></div>
+                                    <div class="col-lg-7">
+                                        <p>ThorVG has been integrated into the <a href="https://www.tizen.org/" target="_blank" rel="noopener noreferrer">Tizen</a> platform as the vector graphics engine. <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/overview/" target="_blank" rel="noopener noreferrer">NUI</a> is the name of Tizen UI framework which is written in C#. ThorVG is the backend engine of the <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview/" target="_blank" rel="noopener noreferrer">NUI Vector Graphics</a> which is used for vector primitive drawings and scalable image contents such as SVG and Lottie Animation among the Tizen applications.</p>
+                                        <img class="img-fluid" src="image/tizen.avif" />
+                                    </div>
+                                </div>
                             </section>
                             <section id="contributors">
                                 <h2>Contributors</h2>
@@ -415,6 +423,7 @@
                                             <li><a href="#structural-design">Structural Design</a></li>
                                             <li><a href="#render-backends">Render Backends</a></li>
                                             <li><a href="#threading">Threading</a></li>
+                                            <li><a href="#smart-rendering">Smart Rendering</a></li>
                                             <li><a href="#svg">SVG</a></li>
                                             <li><a href="#lottie">Lottie</a></li>
                                             <li><a href="#thorvg-viewer">ThorVG Viewer</a></li>

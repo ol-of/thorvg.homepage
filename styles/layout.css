@@ -27,10 +27,6 @@
   padding: 1rem;
 }
 
-.column.is-9 {
-  padding: 1rem 2rem 1rem 0; /* top right bottom left */
-}
-
 .column.is-9 a {
   color: var(--foreground-color);
   border-bottom: 4px solid var(--accent-color);
@@ -110,6 +106,7 @@
     .column.is-9 {
         flex: none;
         width: 75%;
+        padding: 1rem 2rem 1rem 1rem; /* top right bottom left */
     }
 
     .column.is-3 {
@@ -127,6 +124,7 @@
     .column.is-9 {
         flex: none;
         width: 90%;
+        padding: 1rem;
     }
 
     .column.is-3 {
