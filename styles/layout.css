@@ -19,22 +19,27 @@
 }
 
 .columns.is-space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .column {
-    display: block;
-    padding: 1rem;
+  display: block;
+  padding: 1rem;
+}
+
+.column.is-9 {
+  padding: 1rem 2rem 1rem 0; /* top right bottom left */
 }
 
 .column.is-9 a {
-  color: var(--primary-color);
+  color: var(--foreground-color);
   border-bottom: 4px solid var(--accent-color);
 }
 
 .column.is-9 a:hover {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  color: var(--foreground-color);
+  border-bottom: 2px dashed var(--foreground-color);
+
 }
 
 #to-top-btn {
@@ -43,7 +48,7 @@
     right: 1.6em;
     width: 3rem;
     height: 3rem;
-    background-color: var(--primary-color);
+    background-color: var(--foreground-color);
     border: none;
     border-radius: 50%;
     display: flex;
@@ -58,7 +63,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease/*, transform 0.2s ease-in-out*/;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease, transform 0.2s ease-in-out;
 }
 
 #to-top-btn img {
@@ -67,8 +72,7 @@
 }
 
 #to-top-btn:hover {
-  background: var(--accent-color);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .\[\&\>li\]\:before\:content-\[\'-\'\]>li:before {
@@ -141,7 +145,7 @@ section[id] {
 }
 
 .prose-vercel :where(h1) {
-    font-size: 2.6em;
+    font-size: 2.8em;
     font-weight: 600;
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -150,7 +154,7 @@ section[id] {
 }
 
 .prose-vercel :where(h2) {
-    font-size: 1.9em;
+    font-size: 2.1em;
     font-weight: 600;
     margin-top: 1.6em;
     margin-bottom: 1em;
@@ -165,7 +169,7 @@ section[id] {
 }
 
 .prose-vercel :where(h3):not(:where([class~=not-prose],[class~=not-prose] *)) {
-    font-size: 1.35em;
+    font-size: 1.55em;
     font-weight: 600;
     margin-top: 0.6em;
     margin-bottom: .6em;

@@ -71,7 +71,9 @@
 }
 
 .col-lg-3 h3 {
-    margin-top: 0.75em;
+  padding-top: 0;
+  margin-top: 0.8em;
+  font-size: 1.35em;
 }
 
 .col-lg-7 img {

@@ -1,11 +1,14 @@
 :root {
   --font-headline: Poppins, sans-serif;
-  --font-sans: Comfortaa, "Open Sans", sans-serif;
+  --font-sans: "Open Sans", Montserrat, Comfortaa, sans-serif;
   --font-mono: "JetBrains Mono", Roboto Mono, monospace;
+
+  --background-color: white; /* rgb(245, 243, 255); */
+  --foreground-color: black; /* rgb(33, 30, 109); */
+  --hover-color: #FFF294;
 
   --primary-color: #212121;
   --secondary-color: rgb(69 65 62);
-  --hover-color: yellow;
   --background-color: #fff;
   --content-background-color: #fff;
   --accent-color: #AFF4FF; /* AFF4FF */
@@ -20,6 +23,7 @@
   --code-color-string: #22863a;
   --code-color-number: #f75c5c;
 
+  --header-height: 60px;
   --nav-color: black;
   --nav-background-color: white;
 }
@@ -38,7 +42,7 @@ h1, h2, h3 {
 
 body {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 400;
   margin: 0;
 }

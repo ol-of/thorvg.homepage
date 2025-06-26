@@ -1,7 +1,5 @@
 :root {
-  --background-color: #F5F4FD; /* rgb(245, 243, 255); */
-  --foreground-color: #28253b; /* rgb(33, 30, 109); */
-  --hover-color: rgb(36, 79, 235);
+
 
   --header-height: 48px;
 }
@@ -31,7 +29,6 @@ header {
     justify-content: center;
     align-items: stretch;
     padding: 0;
-    font-size: 14px;
 }
 
 header > div {
@@ -52,31 +49,7 @@ header .menu {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 2em;
-}
-
-header a {
-    padding: 0;
-    text-decoration: none;
-    color: var(--foreground-color);
-}
-
-header a:hover {
-    color: var(--hover-color);
-}
-
-.external-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px; /* 텍스트와 이미지 사이 간격 */
-  text-decoration: none; /* 선택 사항: 밑줄 제거 */
-  color: inherit; /* 선택 사항: 링크 색상 상속 */
-}
-
-.external-link img {
-  width: 0.8em;  /* 텍스트 크기에 맞춤 */
-  height: 0.8em;
-  vertical-align: middle;
+    gap: 1em;
 }
 
 .main-layout {
@@ -131,7 +104,7 @@ h1, h2, body {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.2rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-headline);
   /*letter-spacing: -1.8800001144px;*/
 }
 
@@ -260,11 +233,11 @@ p {
   color: var(--background-color);
   text-align: center;
   border-radius: 8rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
   text-decoration: none;
   transition: all .2s ease-in-out;
-  font-family: var(--font-sans);
+  font-family: var(--font-headline);
   margin-bottom: 100px;
   margin-top: 3rem;
 }
@@ -272,6 +245,7 @@ p {
 .button-content:hover {
   box-shadow: none;
   background-color: var(--hover-color);
+  color: var(--foreground-color);
 }
 
 .button-content.is-large-primary {
@@ -286,7 +260,7 @@ p {
 
 .button-content.is-large-primary:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* 진입 시 올라오며 나타나는 효과 */
