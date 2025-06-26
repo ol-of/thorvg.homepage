@@ -30,6 +30,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth; /* 인덱스 이동 시 스크롤 되며 이동 */
 }
 
 *, :before, :after {
