@@ -31,15 +31,35 @@
             </nav>
         </header>
 
-        <nav>
-            <!-- Navigation menu -->
+        <nav class="menu-drawer">
+            <a href="tutorial.html">Tutorial</a>
+            <a href="reference.html">Reference</a>
+            <a href="docs.html" class="is-selected"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
+                Docs
+            </a>
+            <a href="https://github.com/thorvg/thorvg/releases" target="_blank" rel="noopener noreferrer">
+                Releases<svg xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="25" viewBox="0 0 24 25" stroke="currentColor" role="presentation"><path d="M7 17.0293L17 7.0293"></path><path d="M7 7.0293H17V17.0293"></path></svg>
+            </a>
+            <a href="viewer.html">Viewer</a>
         </nav>
-        <main class="main-layout">
-            <h1>주요 제목</h1>
-            <p>주요 내용...</p>
-            <!-- Else... -->
+
+        <main>
+            <iframe src="https://deepwiki.com/thorvg/thorvg"></iframe>
         </main>
         <footer>
         </footer>
+
+        <style>
+        main {
+            height: calc(100vh - var(--header-height));
+            overflow: hidden;
+        }
+
+        main iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        </style>
     </body>
 </html>
