@@ -82,8 +82,8 @@
 }
 
 .menu-item svg {
-/*  class="inline-block w-4 align-middle transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" */
-vertical-align: middle;
+  /*  class="inline-block w-4 align-middle transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" */
+  vertical-align: middle;
   width: 16px;
   height: 16px;
   display: inline-block;
@@ -135,10 +135,16 @@ vertical-align: middle;
   color: var(--background-color);
 }
 
+.menu-drawer .is-selected svg {
+  width: 1.2em;
+  height: auto;
+  margin-right: 0.25rem;
+}
+
 .content-toc {
   position: sticky;
   top: 5rem;
-
+  margin-top: 20px;
   align-self: flex-start;
   border-radius: 0.5rem;
   transition: box-shadow 0.3s ease;
