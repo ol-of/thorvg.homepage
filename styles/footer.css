@@ -8,7 +8,6 @@ footer {
 footer .inner {
     position: relative;
     display: block;
-    max-width: 1200px;
 }
 
 @media screen and (min-width: 1365px) {
@@ -37,20 +36,26 @@ footer .inner {
 
 .flex {
     display: flex;
+    flex-direction: column;
+    color: var(--foreground-color);
+}
+
+.gap-y-14 {
+  row-gap: 3.5rem;
 }
 
 @media (min-width: 640px) {
-    .sm\:flex-row {
-        flex-direction: row;
-    }
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .gap-y-14 {
+    row-gap: 3.5rem;
+  }
 }
 
 .tracking-wider {
     letter-spacing: .05em;
-}
-
-.gap-y-14 {
-    row-gap: 3.5rem;
 }
 
 .justify-between {
@@ -71,17 +76,24 @@ footer .inner {
 }
 
 .items-center {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .w-fit {
-    width: fit-content;
+  width: fit-content;
+  align-items: center;
 }
 
 .flex img {
   width: 160px;
   height: auto;
+}
+
+.copyright {
+    display: flex;
+    text-align: right;
+    /*justify-content: flex-end;*/
 }
 
 /*
