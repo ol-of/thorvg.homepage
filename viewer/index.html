@@ -36,72 +36,84 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="lottie-player.js"></script>
+    <script src="./lottie-player.js"></script>
 </head>
 <body>
-    <section>
-        <div id="image-area">
-            <div id="image-placeholder">Drag and drop a file here, or click to browse (.svg, lottie: .json/.lot)<br/><small>ThorVG Viewer works on your local device. File(s) won't be uploaded to the internet.</small></div>
-            <input id="image-file-selector" type="file" accept=".svg,.lot,.json,.jpg,.png" multiple>
+    <section class="container">
+        <div class="preview">
+            <div id="image-area">
+                <div id="image-placeholder">Drag and drop a file here, or click to browse (.svg, lottie: .json/.lot)<br/><small>ThorVG Viewer works on your local device. File(s) won't be uploaded to the internet.</small></div>
+                <input id="image-file-selector" type="file" accept=".svg,.lot,.json,.jpg,.png" multiple>
+            </div>
+            <div id="console-area" class="hidden">
+                <a id="console-bottom-scroll" title="Scroll to the bottom"><i class="fa fa-chevron-down"></i></a>
+            </div>
+            <div><small id="version">ThorVG v1.0.0-pre22 (Software)</small></div>
         </div>
-        <div id="console-area" class="hidden">
-            <a id="console-bottom-scroll" title="Scroll to the bottom"><i class="fa fa-chevron-down"></i></a>
-        </div>
-        <div><small id="version">ThorVG v1.0.0-pre22 (Software)</small></div>
+        <aside>
+            <div class="controls">
+<div class="section-controls">
+                    <div id="aside-top">
+                        <div id="zoom-slider-container">
+                            <input id="zoom-slider" type="range" min="0" max="300" value="100" disabled />
+                        </div>
+                        <div id="zoom-value">800 x 800</div>
+                    </div>
+                    <div id="progress">
+                        <div class="header">Progress</div>
+                        <div id="progress-value">0 / 0</div>
+                        <div id ="progress-slider-container">
+                            <input id="progress-slider" type="range" min="0" max="100" value="0" disabled />
+                        </div>
+                        <button class="progress-play" id="progress-play"><i class="fa fa-play"></i></button>
+                        <button class="progress-pause" id="progress-pause"><i class="fa fa-pause"></i></button>
+                        <button class="progress-stop" id="progress-stop"><i class="fa fa-stop"></i></button>
+                                        <div id="renderer-select" class="tab">
+                                                <div class="header">Render Backend</div>
+                                                <select id="renderer-dropdown">
+                                                        <option value="sw">Software</option>
+                                                        <option value="gl">WebGL</option>
+                                                        <option value="wg">WebGPU</option>
+                                                </select>
+                                        </div>
+                    </div>
+                    <div class="bottom-nav">
+                        <label id="nav-stats-mode" class="toggle">
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                        <label id="nav-dark-mode" class="toggle">
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                        <hr />
+                        <a id="nav-console">
+                            <i class="fa fa-history"></i>
+                        </a>
+                    </div>
+                    <div id="file">
+                        <div class="placeholder">No file information</br><small>Please load a resource first</small></div>
+                    </div>
+                    <div id="files-list">
+                        <div class="container scrollable">
+                            <div class="placeholder">No file lists</br><small>Please load a resource first</small></div>
+                        </div>
+                    </div>
+                    <!--<div class="upload">
+                        <a id="add-file-local">Add files</a><a id="add-file-url">from url</a>
+                    </div>-->
+</div>
+<div class="section-upload">
+    <h2 class="ctrl-title">Upload</h2>
+    <div class="inner-container row">
+        <input type="file" id="hidden-file-input" accept=".svg, .json" style="display: none;" />
+        <button type="button" class="ctrl-button" id="add-file-local">File</button>
+        <button type="button" class="ctrl-button" id="add-file-url">Url</button>
+    </div>
+</div>
+            </div>
+        </aside>
     </section>
-    <aside>
-        <div class="controls">
-            <div id="aside-top">
-                <div id="zoom-slider-container">
-                    <input id="zoom-slider" type="range" min="0" max="300" value="100" disabled />
-                </div>
-                <div id="zoom-value">800 x 800</div>
-            </div>
-            <div id="progress">
-                <div class="header">Progress</div>
-                <div id="progress-value">0 / 0</div>
-                <div id ="progress-slider-container">
-                    <input id="progress-slider" type="range" min="0" max="100" value="0" disabled />
-                </div>
-                <button class="progress-play" id="progress-play"><i class="fa fa-play"></i></button>
-                <button class="progress-pause" id="progress-pause"><i class="fa fa-pause"></i></button>
-                <button class="progress-stop" id="progress-stop"><i class="fa fa-stop"></i></button>
-                                <div id="renderer-select" class="tab">
-                                        <div class="header">Render Backend</div>
-                                        <select id="renderer-dropdown">
-                                                <option value="sw">Software</option>
-                                                <option value="gl">WebGL</option>
-                                                <option value="wg">WebGPU</option>
-                                        </select>
-                                </div>
-            </div>
-            <div class="bottom-nav">
-                <label id="nav-stats-mode" class="toggle">
-                    <input type="checkbox">
-                    <span></span>
-                </label>
-                <label id="nav-dark-mode" class="toggle">
-                    <input type="checkbox">
-                    <span></span>
-                </label>
-                <hr />
-                <a id="nav-console">
-                    <i class="fa fa-history"></i>
-                </a>
-            </div>
-            <div id="file">
-                <div class="placeholder">No file information</br><small>Please load a resource first</small></div>
-            </div>
-            <div id="files-list">
-                <div class="container scrollable">
-                    <div class="placeholder">No file lists</br><small>Please load a resource first</small></div>
-                </div>
-            </div>
-            <div class="upload">
-                <a id="add-file-local">Add files</a><a id="add-file-url">from url</a>
-            </div>
-        </div>
-    </aside>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
