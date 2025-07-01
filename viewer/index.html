@@ -56,202 +56,149 @@
         <aside>
             <div class="controls">
                 <div class="section-controls">
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">Canvas</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-        <h4 class="ctrl-description" id="zoom-value">800 X 800</h4>
-        <div id="zoom-slider-container">
-            <input id="zoom-slider" type="range" min="0" max="300" value="100" disabled />
-        </div>
-    </div>
-</div>
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">Progress</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-        <h4 class="ctrl-description" id="progress-value">0 / 0</h4>
-        <div id="progress-slider-container">
-            <input id="progress-slider" type="range" min="0" max="100" value="0" disabled />
-        </div>
-        <div class="progress-button-container">
-            <div class="progress-button" id="progress-play">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
-                </svg>
-            </div>
-            <div class="progress-button" id="progress-pause">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                    <path d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z"/>
-                </svg>
-            </div>
-            <div class="progress-button" id="progress-stop">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">Render Backend</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-        <div id="renderer-select" class="tab">
-            <select id="renderer-dropdown">
-                <option value="sw">Software</option>
-                <option value="gl">WebGL</option>
-                <option value="wg">WebGPU</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">Options</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-
-                    <div class="bottom-nav">
-                        <label id="nav-stats-mode" class="toggle">
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <label id="nav-dark-mode" class="toggle">
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <hr />
-                        <a id="nav-console">
-                            <i class="fa fa-history"></i>
-                        </a>
-                    </div>
-
-    </div>
-</div>
-
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">Details</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-        <div id="file">
-            <div class="placeholder">
-                <!--No file information</br>
-                <small>Please load a resource first</small>-->
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="control-item">
-    <div class="item-expand">
-        <h2 class="ctrl-title">List Of Files</h2>
-        <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                <path d="M6 9l6 6 6-6"></path>
-            </svg>
-        </button>
-    </div>
-    <div role="region" class="inner-container column">
-        <div id="files-list">
-            <div class="container scrollable">
-                <div class="placeholder">
-                    <!--No file lists</br>
-                    <small>Please load a resource first</small>-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-                    <!--<div id="aside-top">
-                        <div id="zoom-slider-container">
-                            <input id="zoom-slider" type="range" min="0" max="300" value="100" disabled />
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">Canvas</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
                         </div>
-                        <div id="zoom-value">800 x 800</div>
-                    </div>
-                    <div id="progress">
-                        <div class="header">Progress</div>
-                        <div id="progress-value">0 / 0</div>
-                        <div id ="progress-slider-container">
-                            <input id="progress-slider" type="range" min="0" max="100" value="0" disabled />
+                        <div role="region" class="inner-container column">
+                            <h4 class="ctrl-description" id="zoom-value">800 X 800</h4>
+                            <div id="zoom-slider-container">
+                                <input id="zoom-slider" type="range" min="0" max="300" value="100" disabled />
+                            </div>
                         </div>
-                        <button class="progress-play" id="progress-play"><i class="fa fa-play"></i></button>
-                        <button class="progress-pause" id="progress-pause"><i class="fa fa-pause"></i></button>
-                        <button class="progress-stop" id="progress-stop"><i class="fa fa-stop"></i></button>
-                                        <div id="renderer-select" class="tab">
-                                                <div class="header">Render Backend</div>
-                                                <select id="renderer-dropdown">
-                                                        <option value="sw">Software</option>
-                                                        <option value="gl">WebGL</option>
-                                                        <option value="wg">WebGPU</option>
-                                                </select>
+                    </div>
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">Progress</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div role="region" class="inner-container column">
+                            <h4 class="ctrl-description" id="progress-value">0 / 0</h4>
+                            <div id="progress-slider-container">
+                                <input id="progress-slider" type="range" min="0" max="100" value="0" disabled />
+                            </div>
+                            <div class="progress-button-container">
+                                <div class="progress-button" id="progress-play">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                                    </svg>
+                                </div>
+                                <div class="progress-button" id="progress-pause">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="progress-button" id="progress-stop">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">Render Backend</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div role="region" class="inner-container column">
+                            <div id="renderer-select" class="tab">
+                                <select id="renderer-dropdown">
+                                    <option value="sw">Software</option>
+                                    <option value="gl">WebGL</option>
+                                    <option value="wg">WebGPU</option>
+                                </select>
+                                <svg class="arrow-icon" viewBox="0 0 24 24">
+                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linejoin="round" stroke-width="0.15em" fill="none" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">Options</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div role="region" class="inner-container column">
+
+                                        <div class="bottom-nav">
+                                            <label id="nav-stats-mode" class="toggle">
+                                                <input type="checkbox">
+                                                <span></span>
+                                            </label>
+                                            <label id="nav-dark-mode" class="toggle">
+                                                <input type="checkbox">
+                                                <span></span>
+                                            </label>
+                                            <hr />
+                                            <a id="nav-console">
+                                                <i class="fa fa-history"></i>
+                                            </a>
                                         </div>
-                    </div>
-                    <div class="bottom-nav">
-                        <label id="nav-stats-mode" class="toggle">
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <label id="nav-dark-mode" class="toggle">
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                        <hr />
-                        <a id="nav-console">
-                            <i class="fa fa-history"></i>
-                        </a>
-                    </div>
-                    <div id="file">
-                        <div class="placeholder">No file information</br><small>Please load a resource first</small></div>
-                    </div>
-                    <div id="files-list">
-                        <div class="container scrollable">
-                            <div class="placeholder">No file lists</br><small>Please load a resource first</small></div>
                         </div>
-                    </div>-->
-                    <!--<div class="upload">
-                        <a id="add-file-local">Add files</a><a id="add-file-url">from url</a>
-                    </div>-->
+                    </div>
+
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">Details</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div role="region" class="inner-container column">
+                            <div id="file">
+                                <div class="placeholder">
+                                    <h4 class="ctrl-description">No file information</h4>
+                                    <!--No file information</br>
+                                    <small>Please load a resource first</small>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <div class="item-expand">
+                            <h2 class="ctrl-title">List Of Files</h2>
+                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div role="region" class="inner-container column">
+                            <div id="files-list">
+                                <div class="container scrollable">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-<div class="section-upload">
-    <h2 class="ctrl-title">Upload</h2>
-    <div class="inner-container row">
-        <input type="file" id="hidden-file-input" accept=".svg, .json" style="display: none;" />
-        <button type="button" class="ctrl-button" id="add-file-local">File</button>
-        <button type="button" class="ctrl-button" id="add-file-url">Url</button>
-    </div>
-</div>
+                <div class="section-upload">
+                    <h2 class="ctrl-title">Upload</h2>
+                    <div class="inner-container row">
+                        <input type="file" id="hidden-file-input" accept=".svg, .json" style="display: none;" />
+                        <button type="button" class="ctrl-button" id="add-file-local">File</button>
+                        <button type="button" class="ctrl-button" id="add-file-url">Url</button>
+                    </div>
+                </div>
             </div>
         </aside>
     </section>

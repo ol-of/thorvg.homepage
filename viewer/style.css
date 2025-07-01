@@ -57,7 +57,7 @@ a {
 
 ::selection {
     color: #fff;
-    background: #1ba1c7;
+    background: rgb(48, 48, 48);
 }
 
 hr {
@@ -177,7 +177,7 @@ aside {
 }
 
 .expand-button {
-  display: flex;
+  display: none; /*flex;*/
   align-items: center;
   justify-content: center;
   width: 1.5rem;
@@ -342,15 +342,16 @@ aside > div {
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
+/*
 aside > div > #aside-top {
     /*width: 100%;
-    height: 65px;*/
+    height: 65px;
     background-color: #fff;
-    /*position: absolute;*/
-}
+    /*position: absolute;
+}*/
 
 #zoom-slider-container, #progress-slider-container {
-    margin-top: 0.625rem;
+    margin-top: 0.3rem;
     width: 100%;
     display: flex;
     height: 2.25rem;
@@ -522,21 +523,35 @@ aside > div .scrollable {
 
 .line {
     display: block;
-    padding: 6px 12px;
 }
 
 .line-title {
-    display: block;
-    font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: #6B6B6B;
+  margin: 0;
 }
 
+.line-content {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: #6B6B6B;
+  margin: 0;
+  padding-top: 6px;
+}
+
+/*
 aside > div > div .header {
     padding: 12px 12px 0px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     color: #909090;
-}
+}*/
 
 #files-list .container {
     padding-bottom: 64px;
@@ -545,6 +560,11 @@ aside > div > div .header {
 #files-list .line {
     cursor: pointer;
     position: relative;
+}
+
+.line-details {
+    display: block;
+    font-size: 13px;
 }
 
 #files-list .trash {
@@ -558,10 +578,6 @@ aside > div > div .header {
     color: #777;
 }
 
-.line-details {
-    display: block;
-    font-size: 13px;
-}
 /*
 .upload {
    /*position: absolute;
@@ -601,10 +617,8 @@ aside > div > div .header {
 */
 
 .placeholder {
-    text-align: center;
     padding: 0;
     width: 100%;
-    height: 0;
 }
 
 section {
@@ -674,10 +688,6 @@ section #image-area.highlight {
 
 #image-placeholder span {
   text-transform: none;
-}
-
-#image-placeholder p {
-    font-weight: 500;
 }
 
 #image-file-selector {
@@ -883,12 +893,13 @@ lottie-player {
 }
 
 #renderer-select {
-    display: flex;
+  position: relative;
+  display: inline-block;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     width: 100%;
-  height: 2.25rem;
+    height: 2.25rem;
 }
 
 #renderer-dropdown {
@@ -900,11 +911,22 @@ lottie-player {
     height: 2.25rem;
     border-radius: 0.5rem;
     font-family: var(--font-sans);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     transition: color 0.2s;
     outline: none;
+}
+
+#renderer-select .arrow-icon {
+  position: absolute;
+  pointer-events: none; /* 클릭 방지 */
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #fff;
 }
 
 #renderer-dropdown:hover {
@@ -922,8 +944,10 @@ lottie-player {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    border: none;
+    /*background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 12px center;
-    background-size: 16px;
+    background-size: 16px;*/
 }
+

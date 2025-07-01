@@ -564,6 +564,7 @@ function createTitleLine(title, text) {
     titleLine.setAttribute('class', 'line-title');
     titleLine.innerHTML = title;
     var textLine = document.createElement("span");
+    titleLine.setAttribute('class', 'line-content');
     textLine.innerHTML = text;
     var line = document.createElement("div");
     line.setAttribute('class', 'line');
