@@ -23,9 +23,15 @@
  :root {
     --font-headline: Poppins, 'Noto Mono', 'DejaVu Sans Mono', monospace;
     --font-sans: "Open Sans", 'Noto Mono', 'DejaVu Sans Mono', monospace;
+
+    --ctrl-item-padding: 1rem;
+    --ctrl-layout-width: 320px;
+
+    --ctrl-title-color: rgba(255, 255, 255, 0.89);
+    --ctrl-surface-color: #242424;
 }
 
- * {
+* {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -39,13 +45,13 @@ html, body {
 
 body {
     color: #484848;
-    background-color: #f6f6f6;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     display: flex;
     flex-flow: row nowrap;
     user-select: none;
     -webkit-user-select: none;
+    background-color: #171717;
 }
 
 a {
@@ -63,6 +69,20 @@ a {
 hr {
     border: 0;
     border-bottom: 1px solid #e5e7ec;
+}
+
+section {
+    flex: 1 1 0;
+    display: grid;
+    flex-flow: column nowrap;
+    grid-template-columns: 1fr var(--ctrl-layout-width);
+    position: relative;
+    overflow: hidden;
+    /*margin: 18px;*/
+}
+
+section .hidden {
+    display: none;
 }
 
 /* 트랙 배경색 */
@@ -136,21 +156,14 @@ input[type=range]::-moz-range-thumb {
     transform: translateX(19px);
 }
 
-section.container {
-  display: grid;
-  grid-template-columns: 1fr 320px; /* 왼쪽은 자동 확장, 오른쪽은 고정 320px */
-  height: 100vh;
-  width: 100%;
-}
-
 aside {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background-color: #171717;
   color: white;
   position: relative;
-  overflow: hidden; /* controls 자체는 스크롤 없음 */
+  overflow: hidden; /* No scroll */
 }
 
 .section-upload {
@@ -158,7 +171,7 @@ aside {
   width: 100%;
   bottom: 0;
   left: 0;
-  background: #242424;
+  background: var(--ctrl-surface-color);
   padding: 1.25rem 1rem;
   z-index: 100;
 }
@@ -171,8 +184,8 @@ aside {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--ctrl-item-padding);
+  padding-right: var(--ctrl-item-padding);
   height: 3rem;
 }
 
@@ -194,7 +207,7 @@ aside {
 
 .expand-button:hover {
   color: var(--hover-color);
-  background-color: #242424;
+  background-color: var(--ctrl-surface-color);
 }
 
 .expand-icon {
@@ -244,7 +257,7 @@ h2.ctrl-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: rgba(255, 255, 255, 0.89);
+  color: var(--ctrl-title-color);
 }
 
 h4.ctrl-description {
@@ -277,56 +290,9 @@ h4.ctrl-description {
   flex: 1;
 }
 
-/*
-aside > nav {
-    width: 64px;
-    height: 100%;
-    left: 0;
-   /*position: absolute;
-    border-right: 1px solid #e5e7ec;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
+.ctrl-button:hover {
+  background-color: rgb(66, 66, 66);
 }
-
-aside > nav .bottom-nav {
-    margin-top: auto;
-}
-
-aside > nav a {
-    display: block;
-    color: #aab3bb;
-}
-
-aside > nav a.active {
-    color: #484848;
-}
-
-aside > nav a:hover {
-    color: #38435a;
-    background-color: #f1f4f7;
-}
-
-aside > nav a > .fa {
-    padding: 16px;
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
-    display: block;
-}
-
-aside > nav label {
-    display: block;
-    margin: 12px 0;
-}
-
-aside > div {
-    height: 100%;
-    padding-top: 65px;
-    position: relative;
-    overflow: hidden;
-}
-*/
 
 .controls {
     position: relative;
@@ -337,18 +303,12 @@ aside > div {
 .section-controls {
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* 스크롤 가능 */
+  overflow-y: auto;
   box-sizing: border-box;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  margin-bottom: 6rem;
+  padding-top: 26px;
 }
-
-/*
-aside > div > #aside-top {
-    /*width: 100%;
-    height: 65px;
-    background-color: #fff;
-    /*position: absolute;
-}*/
 
 #zoom-slider-container, #progress-slider-container {
     margin-top: 0.3rem;
@@ -365,7 +325,7 @@ aside > div > #aside-top {
 .progress-button-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-    background: #242424;
+    background: var(--ctrl-surface-color);
     border-radius: 0.5rem;
     padding: 0.25rem;
     align-items: center;
@@ -394,44 +354,12 @@ aside > div > #aside-top {
 .progress-button svg {
     width: 1.05rem;
     height: 1.05rem;
-    fill: currentColor; /* 부모의 color 사용 */
+    fill: currentColor;
 }
-
-/*
-#zoom-slider::-webkit-slider-runnable-track {
-  background: #ddd; /* 트랙 배경색
-}
-
-#zoom-slider::-webkit-slider-thumb {
-  background: #333; /* 슬라이더 버튼 색
-}
-
-#zoom-slider::-webkit-slider-thumb:hover {
-  background: #555; /* 마우스 오버 시 색
-}
-
-#zoom-slider::-webkit-slider-runnable-track {
-  background: linear-gradient(to right, #4caf50 0%, #4caf50 33%, #ddd 33%, #ddd 100%);
-}
-*/
-
-/*
-#progress #progress-value {
-    width: 40%;
-    left: 58%;
-    top: 100px;
-    /*position: absolute;
-    line-height: 48px;
-    padding: 8px;
-    text-align: right;
-    white-space: nowrap;
-    overflow-x: hidden;
-}*/
 
 #aside-top #zoom-value {
     width: 40%;
     left: 60%;
-   /*position: absolute;*/
     line-height: 48px;
     padding: 8px;
     text-align: center;
@@ -544,15 +472,6 @@ aside > div .scrollable {
   padding-top: 6px;
 }
 
-/*
-aside > div > div .header {
-    padding: 12px 12px 0px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 14px;
-    color: #909090;
-}*/
-
 #files-list .container {
     padding-bottom: 64px;
 }
@@ -568,7 +487,6 @@ aside > div > div .header {
 }
 
 #files-list .trash {
-   /*position: absolute;*/
     width: 24px;
     line-height: 34px;
     right: 8px;
@@ -578,86 +496,29 @@ aside > div > div .header {
     color: #777;
 }
 
-/*
-.upload {
-   /*position: absolute;
-    bottom: 16px;
-    left: 50%;
-    margin-left: -110px;
-}
-
-
-.upload > a {
-    background-color: #5a8be4;
-    color: white;
-    display: inline-block;
-    line-height: 32px;
-    text-align: center;
-}
-
-.upload > a:hover,
-.popup > div > footer .button:hover {
-    background-color: #5071b1;
-}
-
-.upload > a > i {
-    padding-right: 8px;
-}
-
-.upload > a#add-file-local {
-    border-radius: 3px 0 0 3px;
-    width: 135px;
-}
-
-.upload > a#add-file-url {
-    border-radius: 0 3px 3px 0;
-    border-left: 1px solid #93afe7;
-    width: 85px;
-}
-*/
-
 .placeholder {
     padding: 0;
     width: 100%;
-}
-
-section {
-    flex: 1 1 0;
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    overflow: hidden;
-}
-
-section .hidden {
-    display: none;
 }
 
 .preview {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /*background-image: url(assets/canvas.jpg);
+  /*border: 1px solid #ccc;
+  background-image: url(assets/canvas.jpg);
   background-repeat: repeat;
   background-size: 16px 16px;*/
 }
 
 #image-area {
-  flex: 1; /* 나머지 공간 모두 차지 */
-  /*background: lightgray;  디버깅용 */
+  display: flex;
+  flex: 1;
+  background-color: #f6f6f6;
   align-items: center;
   justify-content: center;
   font-weight: var(--font-sans);
 }
-
-/*
-section #image-area {
-    flex: 1 1 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
 
 body.dark-mode section #image-area {
     z-index: -1;
@@ -671,8 +532,9 @@ section #image-area.highlight {
 }
 
 #image-placeholder {
-    height: 100%;
     display: flex;
+    width: 600px;
+    height: 600px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -682,9 +544,34 @@ section #image-area.highlight {
     letter-spacing: .05em;
     text-align: center;
     text-transform: uppercase;
-    gap: 0.5rem;
+    gap: 1rem;
     color: #000;
+    cursor: pointer;
+    background-color: #E5FF39;
+  /*border-width: 2px;
+  border-style: solid;
+  border-image-source: repeating-linear-gradient(
+    45deg,
+    black 0px,
+    black 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  border-image-slice: 1;
+  border-image-repeat: round;*/
 }
+/*
+#image-placeholder:hover {
+  font-weight: 600;
+  border-image-source: repeating-linear-gradient(
+    45deg,
+    #666 0px,
+    #666 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+*/
 
 #image-placeholder span {
   text-transform: none;
@@ -907,7 +794,7 @@ lottie-player {
     padding: 0 20px;
     border: none;
     background-color: rgb(48, 48, 48);
-    color: rgb(255, 255, 255);
+    color: var(--ctrl-title-color);
     height: 2.25rem;
     border-radius: 0.5rem;
     font-family: var(--font-sans);
@@ -945,9 +832,59 @@ lottie-player {
     -webkit-appearance: none;
     -moz-appearance: none;
     border: none;
-    /*background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;*/
 }
 
+.actions {
+    display: flex;
+    position: absolute;
+    top: 26px;
+    right: 350px;
+    zoom: 1;
+    z-index: 1000;
+    border: 1px solid #555;
+    border-radius: 3px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #222;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: 0;
+    border: none;
+}
+
+.button:hover {
+  background-color: rgb(66, 66, 66);
+}
+
+.actions .button-stats {
+    right: 18px;
+    background-image: url(icon/status.svg);
+    background-size: 18px 18px;
+    border-right: 1px solid #555;
+    border-radius: 3px 0 0 3px
+}
+
+.actions .button-dark {
+    border-radius: 3px;
+    right: 18px;
+    background-image: url(icon/dark.svg);
+    background-size: 18px 18px;
+    border-right: 1px solid #555;
+    border-radius: 0;
+}
+
+.actions .button-history {
+    border-radius: 3px;
+    right: 18px;
+    background-image: url(icon/history.svg);
+    background-size: 18px 18px;
+    border-radius: 0 3px 3px 0;
+}
+
+.action label {
+    display: none;
+}

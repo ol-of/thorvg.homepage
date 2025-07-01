@@ -44,7 +44,7 @@
             <div id="image-area">
                 <div id="image-placeholder">
                     <p>Drag and drop a file here, or click to browse<br/><span>(.svg, lottie: .json/.lot)</span></p>
-                    <small>Thor-VG Viewer works on your local device. File(s) won't be uploaded to the internet.</small>
+                    <small>Thor-VG Viewer works on your local device.<br/>File(s) won't be uploaded to the internet.</small>
                 </div>
                 <input id="image-file-selector" type="file" accept=".svg,.lot,.json,.jpg,.png" multiple>
             </div>
@@ -52,6 +52,13 @@
                 <a id="console-bottom-scroll" title="Scroll to the bottom"><i class="fa fa-chevron-down"></i></a>
             </div>
             <div id="info-area"><small id="version">ThorVG v1.0.0-pre22 (Software)</small></div>
+            <div class="actions">
+                <button title="Stats Mode" class="button button-stats"></button>
+                <button title="Dark Mode" class="button button-dark"></button>
+                <button title="History" class="button button-history" id="nav-history"></button>
+                <label id="nav-stats-mode" class="toggle"><input type="checkbox"></label>
+                <label id="nav-dark-mode" class="toggle"><input type="checkbox"></label>
+            </div>
         </div>
         <aside>
             <div class="controls">
@@ -127,34 +134,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">Options</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-
-                                        <div class="bottom-nav">
-                                            <label id="nav-stats-mode" class="toggle">
-                                                <input type="checkbox">
-                                                <span></span>
-                                            </label>
-                                            <label id="nav-dark-mode" class="toggle">
-                                                <input type="checkbox">
-                                                <span></span>
-                                            </label>
-                                            <hr />
-                                            <a id="nav-console">
-                                                <i class="fa fa-history"></i>
-                                            </a>
-                                        </div>
-                        </div>
-                    </div>
-
                     <div class="control-item">
                         <div class="item-expand">
                             <h2 class="ctrl-title">Details</h2>

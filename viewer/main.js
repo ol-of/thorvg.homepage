@@ -154,9 +154,20 @@ function initialize() {
     /*document.getElementById("nav-files-list").addEventListener("click", onShowFilesList, false);*/
     document.getElementById("nav-dark-mode").addEventListener("change", onDarkMode, false);
     document.getElementById("nav-stats-mode").addEventListener("change", onStatsMode, false);
-        document.getElementById("renderer-dropdown").addEventListener("change", onRendererMode, false);
-    document.getElementById("nav-console").addEventListener("click", onConsoleWindow, false);
-
+    document.getElementById("renderer-dropdown").addEventListener("change", onRendererMode, false);
+    document.getElementById("nav-history").addEventListener("click", onConsoleWindow, false);
+    document.querySelector('.button-stats').addEventListener('click', () => {
+    const checkbox = document.querySelector('#nav-stats-mode input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        console.log('Stats checkbox is now', checkbox.checked ? 'checked' : 'unchecked');
+        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    document.querySelector('.button-dark').addEventListener('click', () => {
+    const checkbox = document.querySelector('#nav-dark-mode input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        console.log('Stats checkbox is now', checkbox.checked ? 'checked' : 'unchecked');
+        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+    });
     document.getElementById("console-bottom-scroll").addEventListener("click", onConsoleBottom, false);
 
     document.getElementById("zoom-slider").addEventListener("input", onZoomSlider, false);
@@ -377,6 +388,7 @@ function onShowFilesList() {
     showPage("files-list");
 }
 */
+
 function onDarkMode(event) {
     document.body.classList.toggle("dark-mode", event.target.checked);
 }
@@ -390,15 +402,15 @@ function onStatsMode(event) {
             // Initialize FPS panel
             const statsFPS = new Stats();
             statsFPS.showPanel(0);
-                        statsFPS.dom.classList.add("stats");
-            statsFPS.dom.style.cssText = "position:fixed;top:0;left:0;cursor:pointer;opacity:0.9;z-index:10000";
+            statsFPS.dom.classList.add("stats");
+            statsFPS.dom.style.cssText = "position:fixed;top:26px;left:30px;cursor:pointer;opacity:0.9;z-index:10000";
             document.body.appendChild(statsFPS.dom);
 
             // Initialize MS panel
             const statsMS = new Stats();
             statsMS.showPanel(1);
-                        statsMS.dom.classList.add("stats");
-            statsMS.dom.style.cssText = "position:fixed;top:0;left:80px;cursor:pointer;opacity:0.9;z-index:10000";
+            statsMS.dom.classList.add("stats");
+            statsMS.dom.style.cssText = "position:fixed;top:26px;left:110px;cursor:pointer;opacity:0.9;z-index:10000";
             document.body.appendChild(statsMS.dom);
 
             // Initialize MB panel if supported
@@ -407,7 +419,7 @@ function onStatsMode(event) {
                 statsMB = new Stats();
                 statsMB.showPanel(2);
                 statsMB.dom.classList.add("stats");
-                statsMB.dom.style.cssText = "position:fixed;top:0;left:160px;cursor:pointer;opacity:0.9;z-index:10000";
+                statsMB.dom.style.cssText = "position:fixed;top:26px;left:190px;cursor:pointer;opacity:0.9;z-index:10000";
                 document.body.appendChild(statsMB.dom);
             }
 
@@ -427,7 +439,7 @@ function onStatsMode(event) {
             requestAnimationFrame(animate);
         };
         document.head.appendChild(statsScript);
-                return;
+        return;
     }
 
     // Remove stats.js panels and script when benchmark mode is disabled
