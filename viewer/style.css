@@ -20,6 +20,11 @@
  * SOFTWARE.
  */
 
+ :root {
+    --font-headline: Poppins, 'Noto Mono', 'DejaVu Sans Mono', monospace;
+    --font-sans: "Open Sans", 'Noto Mono', 'DejaVu Sans Mono', monospace;
+}
+
  * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -35,9 +40,6 @@ html, body {
 body {
     color: #484848;
     background-color: #f6f6f6;
-	font-size: 15px;
-    font-family: 'Open Sans', sans-serif;
-	font-weight: 500;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     display: flex;
@@ -63,23 +65,26 @@ hr {
     border-bottom: 1px solid #e5e7ec;
 }
 
+/* 트랙 배경색 */
 input[type=range] {
     -webkit-appearance: none;
     height: 5px;
     border-radius: 3px;
-    background-color: #5a8be4;
+    background-color: #878787;
     outline: none;
 }
 
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    box-shadow: 0 0 3px #666;
-    background-color: #fff;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  cursor: pointer;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -149,10 +154,13 @@ aside {
 }
 
 .section-upload {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
   background: #242424;
   padding: 1.25rem 1rem;
-  box-sizing: border-box;
-  flex-shrink: 0;
+  z-index: 100;
 }
 
 .control-item:last-of-type {
@@ -240,9 +248,10 @@ h2.ctrl-title {
 }
 
 h4.ctrl-description {
+  font-family: var(--font-sans);
   font-weight: 600;
-  line-height: 1rem;
-  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-size: 0.9rem;
   color: #6B6B6B;
   white-space: nowrap;
   overflow: hidden;
@@ -318,16 +327,17 @@ aside > div {
     overflow: hidden;
 }
 */
+
 .controls {
-  display: flex;
-  flex-direction: column;  /* 자식들을 세로로 배치 */
-  width: 100%;             /* 원하는 전체 너비 */
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .section-controls {
-  flex: 1; /* 남는 공간을 모두 차지 */
+  width: 100%;
+  height: 100%;
   overflow-y: auto; /* 스크롤 가능 */
-  padding-bottom: 1rem;
   box-sizing: border-box;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
@@ -339,23 +349,70 @@ aside > div > #aside-top {
     /*position: absolute;*/
 }
 
-#zoom-slider-container {
-    width: 60%;
-    /*position: absolute;*/
-    padding-left: 8px;
-    top: 19px;
-}
-
-#progress-slider-container {
+#zoom-slider-container, #progress-slider-container {
+    margin-top: 0.625rem;
     width: 100%;
-    /*position: absolute;*/
-    padding-left: 8px;
-    top: 100px;
+    display: flex;
+    height: 2.25rem;
+    align-items: center;
 }
 
-#progress-slider {
-    width: 95%;
+#zoom-slider, #progress-slider {
+  width: 100%;
 }
+
+.progress-button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    background: #242424;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    align-items: center;
+    margin-top: 0.625rem;
+}
+
+.progress-button {
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: #6B6B6B;
+    font-size: 0.875rem;
+    font-weight: 600;
+    height: 1.75rem;
+    position: relative;
+}
+
+.progress-button:hover {
+    background: rgb(48, 48, 48);
+    color: #FFFFFF;
+}
+
+.progress-button svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    fill: currentColor; /* 부모의 color 사용 */
+}
+
+/*
+#zoom-slider::-webkit-slider-runnable-track {
+  background: #ddd; /* 트랙 배경색
+}
+
+#zoom-slider::-webkit-slider-thumb {
+  background: #333; /* 슬라이더 버튼 색
+}
+
+#zoom-slider::-webkit-slider-thumb:hover {
+  background: #555; /* 마우스 오버 시 색
+}
+
+#zoom-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #4caf50 0%, #4caf50 33%, #ddd 33%, #ddd 100%);
+}
+*/
 
 /*
 #progress #progress-value {
@@ -369,49 +426,6 @@ aside > div > #aside-top {
     white-space: nowrap;
     overflow-x: hidden;
 }*/
-
-.progress-play {
-    border: none;
-    background: #5a8be4;
-    color: #ffffff;
-    padding: 5px 5px;
-    font-size: 16px;
-    cursor: pointer;
-   /*position: absolute;*/
-    width: 40px;
-    top: 125px;
-    left: 75px;
-}
-
-.progress-pause {
-    border: none;
-    background: #5a8be4;
-    color: #ffffff;
-    padding: 5px 5px;
-    font-size: 16px;
-    cursor: pointer;
-   /*position: absolute;*/
-    width: 40px;
-    top: 125px;
-    left: 120px;
-}
-
-.progress-stop {
-    border: none;
-    background: #5a8be4;
-    color: #ffffff;
-    padding: 5px 5px;
-    font-size: 16px;
-    cursor: pointer;
-   /*position: absolute;*/
-    width: 40px;
-    top: 125px;
-    left: 165px;
-}
-
-#aside-top #zoom-slider {
-    width: 100%;
-}
 
 #aside-top #zoom-value {
     width: 40%;
@@ -588,11 +602,9 @@ aside > div > div .header {
 
 .placeholder {
     text-align: center;
-   /*position: absolute;*/
-    top: 45%;
-    padding: 0 8px;
-    margin-top: -32px;
+    padding: 0;
     width: 100%;
+    height: 0;
 }
 
 section {
@@ -611,6 +623,9 @@ section .hidden {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /*background-image: url(assets/canvas.jpg);
+  background-repeat: repeat;
+  background-size: 16px 16px;*/
 }
 
 #image-area {
@@ -618,7 +633,7 @@ section .hidden {
   /*background: lightgray;  디버깅용 */
   align-items: center;
   justify-content: center;
-  font-weight: "Open Sans";
+  font-weight: var(--font-sans);
 }
 
 /*
@@ -642,7 +657,27 @@ section #image-area.highlight {
 }
 
 #image-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: .05em;
     text-align: center;
+    text-transform: uppercase;
+    gap: 0.5rem;
+    color: #000;
+}
+
+#image-placeholder span {
+  text-transform: none;
+}
+
+#image-placeholder p {
+    font-weight: 500;
 }
 
 #image-file-selector {
@@ -658,7 +693,7 @@ section #image-area.highlight {
 
 #console-area > span {
     display: block;
-    font-family: "Open Sans", 'Noto Mono', 'DejaVu Sans Mono', monospace;
+    font-family: var(--font-sans);
     user-select: text;
     -webkit-user-select: text;
     padding-left: 24px;
@@ -703,8 +738,13 @@ section #image-area.highlight {
 }
 
 #info-area {
-  height: 50px;
+  position: relative;
+  padding: 4px 15px;
   background: lightgreen;
+  color: #000;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: .05em;
 }
 
 .popup {
@@ -848,32 +888,32 @@ lottie-player {
     justify-content: center;
     align-items: start;
     width: 100%;
-   /*position: absolute;*/
-  top: 185px;
-  height: 64px;
+  height: 2.25rem;
 }
 
 #renderer-dropdown {
     width: 100%;
-    padding: 8px 20px;
-  margin-top: 4px;
+    padding: 0 20px;
     border: none;
-    background-color: transparent;
-    color: #38435a;
-    font-size: 16px;
-  height: 40px;
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: color 0.2s;
     outline: none;
 }
 
 #renderer-dropdown:hover {
-    color: #38435a;
-    background-color: #f1f4f7;
+    color: #fff;
+    background-color: rgb(66, 66, 66);
 }
 
 #renderer-dropdown:disabled {
-    color: #999;
+    color: #6B6B6B;
     cursor: not-allowed;
 }
 
