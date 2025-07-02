@@ -21,8 +21,8 @@
  */
 
  :root {
-    --font-headline: Poppins, 'Noto Mono', 'DejaVu Sans Mono', monospace;
     --font-sans: "Open Sans", 'Noto Mono', 'DejaVu Sans Mono', monospace;
+    --font-mono: "Source Code Pro", Roboto Mono, monospace;
 
     --ctrl-item-padding: 1rem;
     --ctrl-layout-width: 320px;
@@ -186,7 +186,7 @@ aside {
   flex-direction: row;
   padding-left: var(--ctrl-item-padding);
   padding-right: var(--ctrl-item-padding);
-  height: 3rem;
+  height: 3.2rem;
 }
 
 .expand-button {
@@ -227,10 +227,9 @@ svg.expand-icon {
 
 .inner-container {
   width: 100%;
-  padding-top: 1.25rem;
 }
 
-.inner-container.column {
+.section-controls .inner-container {
   padding-top: 0rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -238,7 +237,15 @@ svg.expand-icon {
   border-bottom: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.inner-container.row {
+.section-controls .inner-container.row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.section-upload .inner-container.row {
+  padding-top: 1.25rem;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -263,8 +270,8 @@ h2.ctrl-title {
 h4.ctrl-description {
   font-family: var(--font-sans);
   font-weight: 600;
-  line-height: 1.25rem;
   font-size: 0.9rem;
+  line-height: 1.25rem;
   color: #6B6B6B;
   white-space: nowrap;
   overflow: hidden;
@@ -307,7 +314,7 @@ h4.ctrl-description {
   box-sizing: border-box;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
   margin-bottom: 6rem;
-  padding-top: 26px;
+  padding-top: 18px;
 }
 
 #zoom-slider-container, #progress-slider-container {
@@ -339,7 +346,8 @@ h4.ctrl-description {
     justify-content: center;
     cursor: pointer;
     border-radius: 0.5rem;
-    color: #6B6B6B;
+    color: #FFFFFF;
+    /*color: #6B6B6B; disable*/
     font-size: 0.875rem;
     font-weight: 600;
     height: 1.75rem;
@@ -348,7 +356,6 @@ h4.ctrl-description {
 
 .progress-button:hover {
     background: rgb(48, 48, 48);
-    color: #FFFFFF;
 }
 
 .progress-button svg {
@@ -449,27 +456,33 @@ aside > div .scrollable {
     padding: 8px 8px 8px 40px;
 }
 
+#file-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .line {
-    display: block;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* trash의 위치 기준 */
+  gap: 4px;
+  font-family: var(--font-sans);
 }
 
 .line-title {
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1.25rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
   color: #6B6B6B;
   margin: 0;
 }
 
 .line-content {
-  font-family: var(--font-sans);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5rem;
-  color: #6B6B6B;
-  margin: 0;
-  padding-top: 6px;
+  color: #a8a8a8;
 }
 
 #files-list .container {
@@ -477,23 +490,49 @@ aside > div .scrollable {
 }
 
 #files-list .line {
-    cursor: pointer;
-    position: relative;
+    padding-bottom: 1.25rem;
+}
+
+.line-name {
+  color: #a8a8a8;
+  margin-right: 28px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
 .line-details {
-    display: block;
-    font-size: 13px;
+  margin-right: 28px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #6B6B6B;
+}
+
+.trash.ctrl-button {
+    display: inline-flex;
+    height: 2.25rem;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    width: auto;
 }
 
 #files-list .trash {
-    width: 24px;
-    line-height: 34px;
-    right: 8px;
-    top: 8px;
-    text-align: center;
-    font-size: 20px;
-    color: #777;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  padding: 2px;
+}
+
+.trash svg {
+    fill: #fff;
+    width: 0.95rem;
+    height: 0.95rem;
+    font-size: calc(1 / 1.25 * 1.5rem);
 }
 
 .placeholder {
@@ -505,10 +544,6 @@ aside > div .scrollable {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /*border: 1px solid #ccc;
-  background-image: url(assets/canvas.jpg);
-  background-repeat: repeat;
-  background-size: 16px 16px;*/
 }
 
 #image-area {
@@ -520,7 +555,7 @@ aside > div .scrollable {
   font-weight: var(--font-sans);
 }
 
-body.dark-mode section #image-area {
+body.dark-mode #image-area {
     z-index: -1;
     background-color: #1b2124;
     color: #f6f6f6;
@@ -532,49 +567,44 @@ section #image-area.highlight {
 }
 
 #image-placeholder {
-    display: flex;
-    width: 600px;
-    height: 600px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-sans);
-    font-size: 1.15rem;
-    font-weight: 400;
-    letter-spacing: .05em;
-    text-align: center;
-    text-transform: uppercase;
-    gap: 1rem;
-    color: #000;
-    cursor: pointer;
-    background-color: #E5FF39;
-  /*border-width: 2px;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: .05em;
+  text-align: center;
+  gap: 1rem;
+  color: #737373;
+  cursor: pointer;
+  border-radius: 1rem;
+  border-width: 2px;
   border-style: solid;
   border-image-source: repeating-linear-gradient(
     45deg,
-    black 0px,
-    black 5px,
+    #cccccc 0px,
+    #cccccc 5px,
     transparent 5px,
     transparent 10px
   );
   border-image-slice: 1;
-  border-image-repeat: round;*/
+  border-image-repeat: round;
 }
-/*
-#image-placeholder:hover {
-  font-weight: 600;
+
+body.dark-mode #image-placeholder {
   border-image-source: repeating-linear-gradient(
     45deg,
-    #666 0px,
-    #666 5px,
+    #3d4a52 0px,
+    #3d4a52 5px,
     transparent 5px,
     transparent 10px
   );
-}
-*/
-
-#image-placeholder span {
-  text-transform: none;
+  color: #5b6f7b;
+  cursor: pointer;
 }
 
 #image-file-selector {
@@ -582,20 +612,22 @@ section #image-area.highlight {
 }
 
 #console-area {
-    background-color: #fdfdfd;
+    background-color: #f5f5f5;
     border-top: 1px solid #e5e7ec;
     height: 150px;
     overflow-y: scroll;
+    padding-bottom: 30px;
 }
 
 #console-area > span {
     display: block;
-    font-family: var(--font-sans);
-    user-select: text;
+    font-size: 14px;
+    font-family: var(--font-mono);
     -webkit-user-select: text;
     padding-left: 24px;
     line-height:  23px;
     border-bottom: 1px solid #f8f8f8;
+    user-select: text;
 }
 
 #console-area > span.console-type-inner {
@@ -635,13 +667,25 @@ section #image-area.highlight {
 }
 
 #info-area {
-  position: relative;
-  padding: 4px 15px;
-  background: lightgreen;
-  color: #000;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: .05em;
+  position: fixed;
+  left: calc(((100vw - 320px) / 2) - 115px);
+  bottom: 0;
+  width: 230px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*transform: rotate(-90deg) translateY(-50%);*/
+  transform-origin: left top;
+  display: inline-block;
+  padding: 0 16px;
+  background-color: #333;
+  color: white;
+  font-family: sans-serif;
+  font-size: 16x;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  white-space: nowrap;
 }
 
 .popup {
@@ -763,13 +807,6 @@ section #image-area.highlight {
     0%, 100% { -webkit-transform: translateX(0); }
 }
 
-span.line-name {
-    margin-right: 28px;
-    overflow: hidden;
-    display: flex;
-    word-break: break-word;
-}
-
 lottie-player {
     position: fixed;
     width: 800px;
@@ -837,8 +874,8 @@ lottie-player {
 .actions {
     display: flex;
     position: absolute;
-    top: 26px;
-    right: 350px;
+    top: 16px;
+    right: 340px;
     zoom: 1;
     z-index: 1000;
     border: 1px solid #555;

@@ -48,96 +48,24 @@
             </a>
         </nav>
 
-        <div class="container">
-            <div class="preview">
-                <div id="canvasArea"></div>
-            </div>
-
-            <div class="controls">
-                <div class="section-controls">
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">Canvas</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-                            <h4 class="ctrl-description">800 X 800</h4>
-                            <div class="slider-wrapper">
-                                <div tabindex="-1" class="ctrl-slider" style="position: relative; touch-action: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; outline: 0px; padding-top: 9px; padding-bottom: 9px;"><div id="slider-track-181" class="chakra-slider__track css-gih46n" style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%;"><div class="chakra-slider__filled-track css-pu7w4v" style="position: absolute; top: 50%; transform: translateY(-50%); width: 77.7778%; left: 0px;"></div></div><div role="slider" tabindex="0" id="slider-thumb-181" aria-valuemin="3" aria-valuemax="12" aria-valuenow="10" aria-orientation="horizontal" class="chakra-slider__thumb css-1xpbahs" style="position: absolute; user-select: none; touch-action: none; left: calc(77.7778% - 9px);"></div><input type="hidden" value="10"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">Progress</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-                            <h4 class="ctrl-description">Frame 0 / 0</h4>
-                        </div>
-                    </div>
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">Render Backend</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-                            <select class="ctrl-dropdown">
-                                <option value="sw">Software</option>
-                                <option value="gl">WebGL</option>
-                                <option value="wg">WebGPU</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">List Of Files</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-                        </div>
-                    </div>
-                    <div class="control-item">
-                        <div class="item-expand">
-                            <h2 class="ctrl-title">Details</h2>
-                            <button type="button" id="accordion-button-176" aria-expanded="true" aria-controls="accordion-panel-176" class="expand-button">
-                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.125em" class="expand-icon">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div role="region" class="inner-container column">
-                        </div>
-                    </div>
-                </div>
-                <div class="section-upload">
-                    <h2 class="ctrl-title">Upload</h2>
-                    <div class="inner-container row">
-                        <input type="file" id="hidden-file-input" accept=".svg, .json" style="display: none;" />
-                        <button type="button" class="ctrl-button" id="file-button">File</button>
-                        <button type="button" class="ctrl-button">Url</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <main>
+            <iframe src="viewer/index.html"></iframe>
+        </main>
 
         <footer>
         </footer>
+
+        <style>
+        main {
+            height: calc(100vh - var(--header-height));
+            overflow: hidden;
+        }
+
+        main iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        </style>
     </body>
 </html>

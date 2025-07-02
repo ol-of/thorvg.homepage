@@ -77,21 +77,18 @@ window.onload = () => {
 }
 
 function createTabs() {
-    //file tab
+    // File tab
     var size = player.size;
     var sizeText = ((size[0] % 1 === 0) && (size[1] % 1 === 0)) ?
         size[0].toFixed(0) + " x " + size[1].toFixed(0) :
         size[0].toFixed(2) + " x " + size[1].toFixed(2);
 
-    var file = document.getElementById("file");
+    var file = document.getElementById("file-detail");
     file.textContent = '';
-    file.appendChild(createHeader("Details"));
-    file.appendChild(createTitleLine("Filename", filename));
+    file.appendChild(createTitleLine("File Name", filename));
     file.appendChild(createTitleLine("Resolution", sizeText));
-    file.appendChild(createHeader("Export"));
 
-    var lineExportPng = createPropertyLine("Export .png file");
-    lineExportPng.addEventListener("click", async () => {
+    async function handleExportPngClick() {
         try {
             await player.save2png();
         } catch (err) {
@@ -99,11 +96,10 @@ function createTabs() {
             consoleLog(message, ConsoleLogTypes.Error);
             alert(message);
         }
-    }, false);
-    file.appendChild(lineExportPng);
+    }
+    document.getElementById("export-png").addEventListener("click", handleExportPngClick);
 
-    var lineExportGif = createPropertyLine("Export .gif file");
-    lineExportGif.addEventListener("click", async () => {
+    async function handleExportGifClick() {
         try {
             player.save2gif(filedata);
         } catch (err) {
@@ -111,11 +107,8 @@ function createTabs() {
             consoleLog(message, ConsoleLogTypes.Error);
             alert(message);
         }
-    }, false);
-    file.appendChild(lineExportGif);
-
-    //switch to file list in default.
-    onShowFilesList();
+    }
+    document.getElementById("export-gif").addEventListener("click", handleExportGifClick);
 }
 
 //console message
@@ -168,7 +161,7 @@ function initialize() {
         console.log('Stats checkbox is now', checkbox.checked ? 'checked' : 'unchecked');
         checkbox.dispatchEvent(new Event('change', { bubbles: true }));
     });
-    document.getElementById("console-bottom-scroll").addEventListener("click", onConsoleBottom, false);
+    /*document.getElementById("console-bottom-scroll").addEventListener("click", onConsoleBottom, false);*/
 
     document.getElementById("zoom-slider").addEventListener("input", onZoomSlider, false);
     document.getElementById("zoom-value").addEventListener("keydown", onZoomValue, false);
@@ -295,13 +288,11 @@ function loadUrl(url) {
     showImageCanvas();
     enableZoomContainer();
     enableProgressContainer();
-    /*showPage("progress");*/
 }
 
 function createFilesListTab() {
     var container = document.getElementById("files-list").children[0];
     container.textContent = '';
-    container.appendChild(createHeader("List of files"));
     for (let i = 0; i < filesList.length; ++i) {
         let file = filesList[i];
         var lineFile = createFilesListLine(file);
@@ -403,14 +394,14 @@ function onStatsMode(event) {
             const statsFPS = new Stats();
             statsFPS.showPanel(0);
             statsFPS.dom.classList.add("stats");
-            statsFPS.dom.style.cssText = "position:fixed;top:26px;left:30px;cursor:pointer;opacity:0.9;z-index:10000";
+            statsFPS.dom.style.cssText = "position:fixed;top:16px;left:20px;cursor:pointer;opacity:0.9;z-index:10000";
             document.body.appendChild(statsFPS.dom);
 
             // Initialize MS panel
             const statsMS = new Stats();
             statsMS.showPanel(1);
             statsMS.dom.classList.add("stats");
-            statsMS.dom.style.cssText = "position:fixed;top:26px;left:110px;cursor:pointer;opacity:0.9;z-index:10000";
+            statsMS.dom.style.cssText = "position:fixed;top:16px;left:100px;cursor:pointer;opacity:0.9;z-index:10000";
             document.body.appendChild(statsMS.dom);
 
             // Initialize MB panel if supported
@@ -419,7 +410,7 @@ function onStatsMode(event) {
                 statsMB = new Stats();
                 statsMB.showPanel(2);
                 statsMB.dom.classList.add("stats");
-                statsMB.dom.style.cssText = "position:fixed;top:26px;left:190px;cursor:pointer;opacity:0.9;z-index:10000";
+                statsMB.dom.style.cssText = "position:fixed;top:16px;left:180px;cursor:pointer;opacity:0.9;z-index:10000";
                 document.body.appendChild(statsMB.dom);
             }
 
@@ -457,15 +448,15 @@ function onRendererMode(event) {
   switch (event.target.value) {
     case 'sw':
       renderer = 'sw';
-      versionEl.textContent = versionEl.textContent.split('(')[0] + '(Software)';
+      versionEl.textContent = versionEl.textContent.split('·')[0] + '· Software';
       break;
     case 'wg':
       renderer = 'wg';
-      versionEl.textContent = versionEl.textContent.split('(')[0] + '(WebGPU)';
+      versionEl.textContent = versionEl.textContent.split('·')[0] + '· WebGPU';
       break;
     case 'gl':
       renderer = 'gl';
-      versionEl.textContent = versionEl.textContent.split('(')[0] + '(WebGL)';
+      versionEl.textContent = versionEl.textContent.split('·')[0] + '· WebGL';
       break;
     default:
       return;
@@ -480,10 +471,12 @@ function onConsoleWindow(event) {
     document.getElementById("console-area").classList.toggle("hidden");
 }
 
+/*
 function onConsoleBottom(event) {
     var consoleWindow = document.getElementById("console-area");
     consoleWindow.scrollTop = consoleWindow.scrollHeight;
 }
+*/
 
 function onZoomSlider(event) {
     var value = event.target.value;
@@ -619,10 +612,10 @@ function createFilesListLine(file) {
     detailsLine.innerHTML = bytesToSize(file.size);
     line.appendChild(detailsLine);
 
-    var trash = document.createElement("a");
-    trash.setAttribute('class', 'trash');
-    trash.innerHTML = '<i class="fa fa-trash-o"></i>';
-    trash.addEventListener("click", (event)=>{
+    var trash = document.createElement("button");
+    trash.setAttribute('class', 'trash ctrl-button');
+    trash.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0L284.2 0c12.1 0 23.2 6.8 28.6 17.7L320 32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 96C14.3 96 0 81.7 0 64S14.3 32 32 32l96 0 7.2-14.3zM32 128l384 0 0 320c0 35.3-28.7 64-64 64L96 512c-35.3 0-64-28.7-64-64l0-320zm96 64c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16z"/></svg>';
+    trash.addEventListener("click", (event) => {
         var line = event.currentTarget.parentElement;
         line.parentNode.removeChild(line);
         var index = filesList.indexOf(file);
@@ -667,4 +660,3 @@ function refreshZoomValue() {
     value.innerHTML = player.offsetWidth + " x " + player.offsetHeight;
     value.classList.remove("incorrect");
 }
-
