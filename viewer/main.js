@@ -173,6 +173,25 @@ function initialize() {
 
     document.getElementById("add-file-local").addEventListener("click", openFileBrowse, false);
     document.getElementById("add-file-url").addEventListener("click", onAddFileUrl, false);
+
+    const drawer = document.querySelector('.drawer');
+    const drawerToggle = document.getElementById('drawer-toggle');
+    const backdrop = document.getElementById('drawer-backdrop');
+    const actions = document.querySelector('.actions');
+    drawerToggle.addEventListener('click', () => {
+        drawer.classList.add('open');
+        backdrop.classList.add('show');
+  if (window.innerWidth <= 1023) {
+    actions.style.right = '340px';
+  }
+    });
+    backdrop.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('show');
+  if (window.innerWidth <= 1023) {
+    actions.style.right = '80px';
+  }
+    });
 }
 
 function openFileBrowse() {
@@ -254,7 +273,7 @@ function loadData(data, fileExtension) {
   setTimeout(async () => {
     await player.load(data, fileExtension);
     resize(size, size);
-    showAside();
+    /*showAside();*/
     createTabs();
     showImageCanvas();
     createFilesListTab();
@@ -307,6 +326,7 @@ function createFilesListTab() {
     }
 }
 
+/*
 function showAside() {
     var aside = document.getElementsByTagName("aside")[0];
     aside.classList.remove("hidden");
@@ -325,16 +345,16 @@ function showPage(name) {
         if (child.tagName === "A")
             child.classList.toggle("active", child.id === "nav-" + name);
     }
-}
+}*/
 
-//main image section
+// Main image section
 function showImageCanvas() {
     var placeholder = document.getElementById("image-placeholder");
     player.classList.remove("hidden");
     placeholder.classList.add("hidden");
 }
 
-//zoom slider
+// Zoom slider
 function enableZoomContainer(enable = true) {
     var slider = document.getElementById("zoom-slider");
     slider.disabled = !enable;

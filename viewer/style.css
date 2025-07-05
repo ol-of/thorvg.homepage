@@ -34,6 +34,7 @@
     --ctrl-secondary-color: #6B6B6B;
     --ctrl-tertiary-color: #a8a8a8;
     --ctrl-hover-color: rgb(66, 66, 66);
+    --ctrl-border-color: rgba(255, 255, 255, 0.125);
     --scrollbar-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -73,19 +74,19 @@ a {
 
 hr {
     border: 0;
-    border-bottom: 1px solid #e5e7ec;
+    border-bottom: 1px solid var(--ctrl-border-color);
 }
 
-section {
-    flex: 1 1 0;
-    display: grid;
-    flex-flow: column nowrap;
-    grid-template-columns: 1fr var(--ctrl-layout-width);
-    position: relative;
-    overflow: hidden;
+.root-container {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: 1fr var(--ctrl-layout-width);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-section .hidden {
+.root-container .hidden {
     display: none;
 }
 
@@ -126,14 +127,23 @@ input[type=range]::-moz-range-thumb {
     float: left;
 }
 
-aside {
+.drawer {
     display: flex;
     flex-direction: column;
+    width: var(--ctrl-layout-width);
     height: 100%;
     background-color: var(--ctrl-background-color);
     color: white;
     position: relative;
     overflow: hidden; /* No scroll */
+}
+
+.drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .section-controls {
@@ -290,6 +300,7 @@ h4.ctrl-description {
     position: relative;
     width: 100%;
     height: 100%;
+    border-left: 1px solid var(--ctrl-border-color);
 }
 
 #zoom-slider-container, #progress-slider-container {
@@ -423,6 +434,7 @@ h4.ctrl-description {
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: auto;
 }
 
 #image-area {
@@ -440,7 +452,7 @@ body.dark-mode #image-area {
     color: #f6f6f6;
 }
 
-section #image-area.highlight {
+#image-area.highlight {
     background-color: #272f34;
     color: #f6f6f6;
 }
@@ -495,7 +507,7 @@ body.dark-mode #image-placeholder {
     border-top: 1px solid #e5e7ec;
     height: 150px;
     overflow-y: scroll;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
 }
 
 #console-area > span {
@@ -547,10 +559,10 @@ body.dark-mode #image-placeholder {
 .info-area {
     display: flex;
     position: fixed;
-    left: calc(((100vw - 320px) / 2) - 115px);
+    left: 20px;
     bottom: 0;
-    width: 230px;
-    height: 30px;
+    width: 220px;
+    height: 26px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -565,7 +577,7 @@ body.dark-mode #image-placeholder {
 
 .info-area p {
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .popup {
@@ -758,8 +770,9 @@ lottie-player {
     right: 340px;
     zoom: 1;
     z-index: 1000;
-    border: 1px solid #555;
-    border-radius: 5px;
+    border: 1px solid var(--ctrl-border-color);
+    border-radius: 4px;
+    transition: right 0.3s ease-in-out;
 }
 
 .button {
@@ -781,7 +794,7 @@ lottie-player {
     right: 18px;
     background-image: url(icon/status.svg);
     background-size: 18px 18px;
-    border-right: 1px solid #555;
+    border-right: 1px solid var(--ctrl-border-color);
     border-radius: 3px 0 0 3px
 }
 
@@ -790,7 +803,7 @@ lottie-player {
     right: 18px;
     background-image: url(icon/dark.svg);
     background-size: 18px 18px;
-    border-right: 1px solid #555;
+    border-right: 1px solid var(--ctrl-border-color);
     border-radius: 0;
 }
 
@@ -804,4 +817,57 @@ lottie-player {
 
 .action label {
     display: none;
+}
+
+@media (max-width: 1023px) {
+    .root-container {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        right: 80px;
+    }
+
+    .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 11;
+        transform: translateX(100%);
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .drawer.open {
+        transform: translateX(0);
+    }
+
+    .drawer-toggle {
+        background-image: url(icon/menu.svg);
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        background-size: 18px 18px;
+        border-radius: 3px;
+        border: 1px solid var(--ctrl-border-color);
+    }
+
+    .drawer-backdrop.show {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .actions {
+        right: 340px;
+    }
+
+    .drawer {
+        transition: none !important;
+    }
+
+    .drawer-toggle {
+        display: none;
+    }
 }

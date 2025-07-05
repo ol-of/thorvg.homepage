@@ -39,17 +39,16 @@
     <script src="./lottie-player.js"></script>
 </head>
 <body>
-    <section class="container">
+    <div class="root-container">
         <div class="preview">
+            <button id="drawer-toggle" class="button drawer-toggle"></button>
             <div id="image-area">
                 <div id="image-placeholder">
                     <p>Drag and drop a file here, or click to browse<br/>(.svg, lottie: .json/.lot)</p>
                 </div>
                 <input id="image-file-selector" type="file" accept=".svg,.lot,.json,.jpg,.png" multiple>
             </div>
-            <div id="console-area" class="hidden">
-                <a id="console-bottom-scroll" title="Scroll to the bottom"></a>
-            </div>
+            <div id="console-area" class="hidden"></div>
             <div class="info-area"><p id="version">ThorVG v1.0.0-pre22 · Software</p></div>
             <div class="actions">
                 <button title="Stats Mode" class="button button-stats"></button>
@@ -59,7 +58,7 @@
                 <label id="nav-dark-mode" class="toggle"><input type="checkbox"></label>
             </div>
         </div>
-        <aside>
+        <aside class="drawer">
             <div class="controls">
                 <div class="section-controls">
                     <div class="control-item">
@@ -211,7 +210,8 @@
                 </div>
             </div>
         </aside>
-    </section>
+        <div id="drawer-backdrop" class="drawer-backdrop"></div>
+    </div>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
