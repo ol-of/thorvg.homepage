@@ -181,16 +181,22 @@ function initialize() {
     drawerToggle.addEventListener('click', () => {
         drawer.classList.add('open');
         backdrop.classList.add('show');
-  if (window.innerWidth <= 1023) {
-    actions.style.right = '340px';
-  }
+        if (window.innerWidth <= 1023) {
+            actions.style.right = '340px';
+        }
     });
     backdrop.addEventListener('click', () => {
         drawer.classList.remove('open');
         backdrop.classList.remove('show');
-  if (window.innerWidth <= 1023) {
-    actions.style.right = '80px';
-  }
+        if (window.innerWidth <= 1023) {
+            actions.style.right = '80px';
+        }
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            // Inline style removed => CSS media query reapplied
+            actions.style.right = '';
+        }
     });
 }
 
