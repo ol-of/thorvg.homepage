@@ -12,6 +12,10 @@
   /* 헤더 고정 */
 }
 
+.logo {
+  margin-left: -20px;
+}
+
 .logo, .menu-toggle {
   width: 56px;
   height: 100%;
