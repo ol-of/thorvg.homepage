@@ -39,7 +39,7 @@ const ConsoleLogTypes = { None : '', Inner : 'console-type-inner', Error : 'cons
             if (filetype === "svg" && args[0].indexOf("SVG") > 0) consoleLog(args[0].slice(args[0].lastIndexOf("[0m") + 4), ConsoleLogTypes.Warning);
             else if ((filetype === "json" || filetype === "lot") && args[0].indexOf("LOTTIE") > 0) consoleLog(args[0].slice(args[0].lastIndexOf("[0m") + 4), ConsoleLogTypes.Warning);
         }
-        //baseConsole(...args);
+        baseConsole(...args);
     };
 })();
 
