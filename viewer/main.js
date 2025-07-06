@@ -223,6 +223,7 @@ function fileDropUnhighlight(event) {
 }
 
 function fileDropOrBrowseHandle(files) {
+    console.log("Received files:", files);
     let supportedFiles = false;
     for (let i = 0, file; file = files[i]; ++i) {
         if (!allowedFileExtension(file.name)) continue;
@@ -277,6 +278,7 @@ function loadData(data, fileExtension) {
 
   // FIXME: delay should be removed
   setTimeout(async () => {
+    mssage.console("Call player.load");
     await player.load(data, fileExtension);
     resize(size, size);
     /*showAside();*/
@@ -289,6 +291,7 @@ function loadData(data, fileExtension) {
 }
 
 function loadFile(file) {
+    mssage.console("Call loadFile");
     filename = file.name;
     const fileExtension = filename.split('.').pop().toLowerCase();
     const isLottie = fileExtension.endsWith('json') || fileExtension.endsWith('lot');
