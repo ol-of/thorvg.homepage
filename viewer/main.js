@@ -131,12 +131,13 @@ function consoleLog(message, type = ConsoleLogTypes.None) {
 function initialize() {
     window.addEventListener('dragover', fileDropHighlight, false);
     window.addEventListener('drop', fileDropUnhighlight, false);
-    window.addEventListener('drop', (evt)=>{
+    window.addEventListener('drop', (evt)=> {
         fileDropOrBrowseHandle(evt.dataTransfer.files);
     }, false);
 
     document.getElementById("image-placeholder").addEventListener("click", openFileBrowse, false);
-    document.getElementById("image-file-selector").addEventListener("change", (evt)=>{
+    document.getElementById("image-file-selector").addEventListener("change", (evt)=> {
+        console.log("XXX-Change. image-file-selector");
         fileDropOrBrowseHandle(document.getElementById('image-file-selector').files);
         evt.target.value = '';
     }, false);
@@ -201,6 +202,7 @@ function initialize() {
 }
 
 function openFileBrowse() {
+    console.log("XXX-openFileBrowse");
     document.getElementById('image-file-selector').click();
 }
 
@@ -223,7 +225,7 @@ function fileDropUnhighlight(event) {
 }
 
 function fileDropOrBrowseHandle(files) {
-    console.log("Received files:", files);
+    console.log("XXX-fileDropOrBrowseHandle Received files:", files);
     let supportedFiles = false;
     for (let i = 0, file; file = files[i]; ++i) {
         if (!allowedFileExtension(file.name)) continue;
@@ -259,39 +261,40 @@ function attachAllEventListeners() {
 }
 
 function loadData(data, fileExtension) {
-  filedata = data;
+    console.log("XXX-Call loadData");
+    filedata = data;
 
-  // Cleanup any existing lottie-player elements
-  const existingPlayers = document.querySelectorAll('lottie-player');
-  existingPlayers.forEach(player => {
-    player.destroy();
-    player.remove();
-  });
+    // Cleanup any existing lottie-player elements
+    const existingPlayers = document.querySelectorAll('lottie-player');
+    existingPlayers.forEach(player => {
+        player.destroy();
+        player.remove();
+    });
 
-  player = document.createElement('lottie-player');
-  player.autoPlay = true;
-  player.loop = true;
-  player.wasmUrl = 'thorvg-wasm.wasm';
-  player.renderConfig = { renderer };
-  attachAllEventListeners();
-  document.querySelector('#image-area').appendChild(player);
+    player = document.createElement('lottie-player');
+    player.autoPlay = true;
+    player.loop = true;
+    player.wasmUrl = 'thorvg-wasm.wasm';
+    player.renderConfig = { renderer };
+    attachAllEventListeners();
+    document.querySelector('#image-area').appendChild(player);
 
-  // FIXME: delay should be removed
-  setTimeout(async () => {
-    console.log("Call player.load");
-    await player.load(data, fileExtension);
-    resize(size, size);
-    /*showAside();*/
-    createTabs();
-    showImageCanvas();
-    createFilesListTab();
-    enableZoomContainer();
-    enableProgressContainer();
-  }, 100);
+    // FIXME: delay should be removed
+    setTimeout(async () => {
+        console.log("Call player.load");
+        await player.load(data, fileExtension);
+        resize(size, size);
+        /*showAside();*/
+        createTabs();
+        showImageCanvas();
+        createFilesListTab();
+        enableZoomContainer();
+        enableProgressContainer();
+    }, 100);
 }
 
 function loadFile(file) {
-    console.log("Call loadFile");
+    console.log("XXX-Call loadFile");
     filename = file.name;
     const fileExtension = filename.split('.').pop().toLowerCase();
     const isLottie = fileExtension.endsWith('json') || fileExtension.endsWith('lot');
