@@ -101,9 +101,12 @@ function createTabs() {
 
     async function handleExportGifClick() {
         try {
+            if (!filedata) {
+                throw new Error("File data is not defined. Please upload a valid file before exporting.");
+            }
             player.save2gif(filedata);
         } catch (err) {
-            let message = "Unable to save the Gif data.";
+            let message = err.message || "Unable to save the Gif data.";
             consoleLog(message, ConsoleLogTypes.Error);
             alert(message);
         }
@@ -548,7 +551,7 @@ function onProgressStop() {
 
 function onAddFileUrl() {
     var popup = document.createElement("div");
-    popup.innerHTML = '<div><header>Add file by URL</header><div class="input-group"><span>https://</span><input type="text" id="url-field" placeholder="raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg" /></div><div class="posttext"><a href="https://github.com/thorvg/thorvg.viewer" target="_blank">Thorvg Viewer</a> can load graphics from an outside source. To load a resource at startup, enter its link through the url parameter s (?s=[link]). Such url can be easily shared online. Live example: <a href="https://thorvg.github.io/thorvg.viewer/?s=https://raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg" target="_blank" id="url-example">https://thorvg.github.io/thorvg.viewer/?s=https://raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg</a></div><footer><a class="button" id="popup-cancel">Cancel</a><a class="button" id="popup-ok">Add</a></footer></div>';
+    popup.innerHTML = '<div><header>Add file by URL</header><div class="input-group"><span>https://</span><input type="text" id="url-field" placeholder="raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg" /></div><div class="posttext"><a href="https://github.com/thorvg/thorvg.viewer" target="_blank">Thorvg Viewer</a> can load graphics from an outside source. To load a resource at startup, enter its link through the url parameter s (?s=[link]). Such url can be easily shared online. Live example: <a href="https://thorvg.github.io/thorvg.viewer/?s=https://raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg" target="_blank" id="url-example">https://thorvg.github.io/thorvg.viewer/?s=https://raw.githubusercontent.com/thorvg/thorvg/main/src/examples/images/tiger.svg</a></div><footer><a class="popup-button" id="popup-cancel">Cancel</a><a class="popup-button" id="popup-ok">Add</a></footer></div>';
     popup.setAttribute('class', 'popup');
     document.body.appendChild(popup);
 
@@ -591,7 +594,7 @@ function createTitleLine(title, text) {
     titleLine.setAttribute('class', 'line-title');
     titleLine.innerHTML = title;
     var textLine = document.createElement("span");
-    titleLine.setAttribute('class', 'line-content');
+    textLine.setAttribute('class', 'line-content');
     textLine.innerHTML = text;
     var line = document.createElement("div");
     line.setAttribute('class', 'line');
