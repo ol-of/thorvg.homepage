@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
+/*
 document.addEventListener("DOMContentLoaded", function () {
   const toTopBtn = document.getElementById("to-top-btn");
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", toggleToTopBtn);
   window.addEventListener("resize", toggleToTopBtn);
 });
-
+*/
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.querySelector('.menu-toggle');
   const menuIcon = toggleButton.querySelector('.menu-icon');
