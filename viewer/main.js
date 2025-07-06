@@ -137,16 +137,10 @@ function initialize() {
 
     document.getElementById("image-placeholder").addEventListener("click", openFileBrowse, false);
     document.getElementById("image-file-selector").addEventListener("change", (evt)=> {
-        console.log("XXX-Change. image-file-selector");
         fileDropOrBrowseHandle(document.getElementById('image-file-selector').files);
         evt.target.value = '';
     }, false);
 
-    /*document.getElementById("nav-toggle-aside").addEventListener("click", onToggleAside, false);*/
-    /*document.getElementById("nav-progress").addEventListener("click", onShowProgress, false);*/
-    /*document.getElementById("nav-file").addEventListener("click", onShowFile, false);*/
-    /*document.getElementById("nav-files-list").addEventListener("click", onShowFilesList, false);*/
-    console.log("XXX-initialize");
     document.getElementById("nav-dark-mode").addEventListener("change", onDarkMode, false);
     document.getElementById("nav-stats-mode").addEventListener("change", onStatsMode, false);
     document.getElementById("renderer-dropdown").addEventListener("change", onRendererMode, false);
@@ -203,7 +197,6 @@ function initialize() {
 }
 
 function openFileBrowse() {
-    console.log("XXX-openFileBrowse");
     document.getElementById('image-file-selector').click();
 }
 
@@ -226,7 +219,6 @@ function fileDropUnhighlight(event) {
 }
 
 function fileDropOrBrowseHandle(files) {
-    console.log("XXX-fileDropOrBrowseHandle Received files:", files);
     let supportedFiles = false;
     for (let i = 0, file; file = files[i]; ++i) {
         if (!allowedFileExtension(file.name)) continue;
@@ -262,7 +254,6 @@ function attachAllEventListeners() {
 }
 
 function loadData(data, fileExtension) {
-    console.log("XXX-Call loadData");
     filedata = data;
 
     // Cleanup any existing lottie-player elements
@@ -282,7 +273,6 @@ function loadData(data, fileExtension) {
 
     // FIXME: delay should be removed
     setTimeout(async () => {
-        console.log("Call player.load");
         await player.load(data, fileExtension);
         resize(size, size);
         /*showAside();*/
@@ -295,7 +285,6 @@ function loadData(data, fileExtension) {
 }
 
 function loadFile(file) {
-    console.log("XXX-Call loadFile");
     filename = file.name;
     const fileExtension = filename.split('.').pop().toLowerCase();
     const isLottie = fileExtension.endsWith('json') || fileExtension.endsWith('lot');

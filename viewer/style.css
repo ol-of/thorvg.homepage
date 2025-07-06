@@ -486,6 +486,10 @@ body.dark-mode #image-area {
     border-image-repeat: round;
 }
 
+#image-placeholder.hidden {
+    display: none;
+}
+
 body.dark-mode #image-placeholder {
     border-image-source: repeating-linear-gradient(
       45deg,
@@ -705,7 +709,7 @@ lottie-player {
     height: 800px;
     overflow: hidden;
     display: block;
-    z-index: -1;
+    z-index: 100;
 }
 
 #renderer-select {
