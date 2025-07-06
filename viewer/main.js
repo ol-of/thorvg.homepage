@@ -278,7 +278,7 @@ function loadData(data, fileExtension) {
 
   // FIXME: delay should be removed
   setTimeout(async () => {
-    console("Call player.load");
+    console.log("Call player.load");
     await player.load(data, fileExtension);
     resize(size, size);
     /*showAside();*/
@@ -291,7 +291,7 @@ function loadData(data, fileExtension) {
 }
 
 function loadFile(file) {
-    console("Call loadFile");
+    console.log("Call loadFile");
     filename = file.name;
     const fileExtension = filename.split('.').pop().toLowerCase();
     const isLottie = fileExtension.endsWith('json') || fileExtension.endsWith('lot');
