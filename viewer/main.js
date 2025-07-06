@@ -146,6 +146,7 @@ function initialize() {
     /*document.getElementById("nav-progress").addEventListener("click", onShowProgress, false);*/
     /*document.getElementById("nav-file").addEventListener("click", onShowFile, false);*/
     /*document.getElementById("nav-files-list").addEventListener("click", onShowFilesList, false);*/
+    console.log("XXX-initialize");
     document.getElementById("nav-dark-mode").addEventListener("change", onDarkMode, false);
     document.getElementById("nav-stats-mode").addEventListener("change", onStatsMode, false);
     document.getElementById("renderer-dropdown").addEventListener("change", onRendererMode, false);
