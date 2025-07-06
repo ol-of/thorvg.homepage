@@ -256,7 +256,7 @@
                             <section id="structural-design">
                                 <h2>Structural Design</h2>
                                 <p>ThorVG is designed for a wide range of programs, offering adaptability for integration and use in various applications and systems. It achieves this through a single binary with selectively buildable, modular components in a building block style. This ensures both optimal size and easy maintanence.</p>
-                                <div class="example-container px-5"><img src="image/example_structure.png" /></div>
+                                <div class="example-container px-5"><img src="image/example_structure.svg" /></div>
                                 <p>If your program includes the main renderer, you can seamlessly utilize ThorVG APIs by transitioning drawing contexts between the main renderer and ThorVG. Throughout these API calls, ThorVG effectively serializes drawing commands among volatile paint nodes. Subsequently, it undertakes synchronous or asynchronous rendering via its backend raster engines. Additionally, ThorVG is adept at handling vector images, including formats like SVG, and it remains adaptable for accommodating additional popular formats as needed. In the rendering process, the library may generate intermediate frame buffers for scene compositing, though only when essential. The accompanying diagram provides a concise overview of how to effectively incorporate ThorVG within your system.</p>
                                 <div class="example-container px-5"><img src="image/example_flow.png" /></div>
                             </section>
@@ -269,7 +269,7 @@
                                     <li><p>WebGL</p></li>
                                     <li><p>WebGPU</p></li>
                                 </ul>
-                                <div class="example-container px-5"><img src="image/example_webgpu.png" /></div>
+                                <div class="example-container px-5"><img src="image/example_webgpu.svg" /></div>
                                 <p>ThorVG is ahead of the curve, particularly in the web ecosystem. WebGPU introduces next-generation APIs similar to Vulkan, leveraging compute shaders and providing low-overhead, modern GPU access for more aggressive optimization strategies and broader applications. Building on this, ThorVG fully supports vector rendering features within its specification on top of WebGPU. Additionally, by abstracting underlying hardware graphics accelerations such as Metal, Vulkan, and DirectX, ThorVG ensures seamless adoption across various systems, regardless of the installed hardware accelerations.</p>
                             </section>
                             <section id="threading">
@@ -375,7 +375,7 @@
                                     <div class="col-lg-3"><h3>Tizen</h3></div>
                                     <div class="col-lg-7">
                                         <p>ThorVG has been integrated into the <a href="https://www.tizen.org/" target="_blank" rel="noopener noreferrer">Tizen</a> platform as the vector graphics engine. <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/overview/" target="_blank" rel="noopener noreferrer">NUI</a> is the name of Tizen UI framework which is written in C#. ThorVG is the backend engine of the <a href="https://docs.tizen.org/application/dotnet/guides/user-interface/nui/vectorgraphics/Overview/" target="_blank" rel="noopener noreferrer">NUI Vector Graphics</a> which is used for vector primitive drawings and scalable image contents such as SVG and Lottie Animation among the Tizen applications.</p>
-                                        <img class="img-fluid" src="image/tizen.avif" />
+                                        <img class="img-fluid" src="image/tizen.svg" />
                                     </div>
                                 </div>
                             </section>

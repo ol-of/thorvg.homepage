@@ -26,6 +26,8 @@
   --header-height: 60px;
   --nav-color: black;
   --nav-background-color: white;
+  --shadow-default: -2px;
+  --shadow-color: -5px;
 }
 
 html {

@@ -75,11 +75,11 @@
   margin-top: 0.8em;
   font-size: 1.35em;
 }
-
+/*
 .col-lg-7 img {
   border-radius: 0.5rem;
 }
-
+*/
 @media (min-width: 992px) {
   .row {
     flex-direction: row; /* 가로 배치 */
