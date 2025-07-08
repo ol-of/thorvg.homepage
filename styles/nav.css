@@ -94,14 +94,14 @@
 }
 
 .menu-bg {
-  display: inline-flex; /* 텍스트와 아이콘을 가로로 배치 */
-  align-items: center; /* 세로 중앙 정렬 */
+  display: inline-flex;
+  align-items: center;
   padding: 8px;
   transition: background-color 0.2s ease;
   color: var(--nav-inverse-color);
-  /*text-transform: uppercase;*/
   padding: 6px 16px;
   border-radius: 30px;
+  user-select: none;
 }
 
 .menu-item:hover .menu-bg {
