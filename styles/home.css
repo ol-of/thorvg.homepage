@@ -3,14 +3,16 @@
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding-top: var(--header-height);
+  background: #ffffff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%, rgba(255, 255, 255, 1) 70%);
+
+  color: var(--foreground-color);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding-top: var(--header-height);
 }
 
 header {
@@ -20,12 +22,11 @@ header {
     right: 0;
     height: var(--header-height);
     overflow: hidden;
-    z-index: 2;
-    background-color: var(--background-color);
+    z-index: 1000;
+    /*background-color: var(--background-color);*/
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
+    justify-content: flex-end;
+    align-items: center;
     padding: 0;
 }
 
@@ -37,87 +38,20 @@ header > div {
     align-items: stretch;
 }
 
+header.has-background {
+  background-color: white;
+}
+
 header .menu {
     flex: 1 0 auto;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 4rem;
     gap: 1em;
 }
 
-.home-menu-toggle {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: var(--header-height);
-  height: var(--header-height);
-  background-color: var(--foreground-color);
-  color: var(--background-color);
-  cursor: pointer;
-}
-
-.home-menu-toggle svg {
-  position: absolute;
-  fill: currentColor;
-  transition: opacity 0.2s ease;
-}
-
-.icon-default {
-  max-width: 42px;
-  max-height: 42px;
-  left: 9px;
-  top: 9px;
-}
-
-.icon-hover {
-  max-width: 30px;
-  max-height: 30px;
-  left: 15px;
-  top: 15px;
-  opacity: 0;
-}
-
-.home-menu-toggle:hover .icon-default {
-  opacity: 0;
-}
-
-.home-menu-toggle:hover .icon-hover {
-  opacity: 1;
-}
-
-.home-menu-drawer {
-  position: fixed;
-  gap: 4px;
-  top: 60px;
-  left: 60px;
-  display: inline-flex;
-  flex-direction: column;
-  background: var(--foreground-color);
-  color: var(--background-color);
-  padding: 20px 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: calc(100vw - var(--header-height));
-  z-index: 1000;
-  display: none;
-}
-
-.home-menu-drawer a {
-  color: var(--background-color);
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;  /* 수직 정렬 */
-  justify-content: flex-end; /* 아래쪽 정렬 */
-  border-radius: 35px;
-  padding: 5px 20px;
-}
-
-.home-menu-drawer a:hover {
+.menu-drawer.open header {
   background-color: var(--background-color);
-  color: var(--foreground-color)
 }
 
 .main-layout,
@@ -126,7 +60,7 @@ header .menu {
 }
 
 .main-layout {
-  background: var(--background-color);
+  /*background: var(--background-color);*/
   padding: 5.3rem 0px 5.3rem; /* top horizontal bottom */
 }
 
@@ -251,7 +185,42 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-@media print, screen and (min-width: 1624px) {
+@media print, screen and (max-width: 1023px) {
+  header {
+    padding: 0px 2.5rem;
+  }
+
+  .main-content {
+    padding: 0px 2.5rem;
+  }
+
+  .text-body {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media print, screen and (max-width: 840px) {
+  header {
+    padding: 0 1.5rem;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  header {
+    padding: 0px 4rem;
+  }
+
+  .main-content {
+    padding: 0px 7rem;
+  }
+}
+
+@media print, screen and (min-width: 1365px) {
+  header {
+    padding: 0px 7rem;
+  }
+
   .header-h1 {
       max-width: 58rem;
   }
@@ -260,54 +229,24 @@ p {
     max-width: 78rem;
   }
 
-  .side-menu {
-    margin-right: 6rem;
-  }
-}
-
-@media screen and (min-width: 1365px) {
   .main-content {
     padding: 0px 11.5rem;
   }
 }
 
-@media print, screen and (max-width: 1364px) {
+@media print, screen and (min-width: 2100px) {
+  header {
+    padding-right: 11.5rem;
+  }
+
   .main-content {
-    padding: 0px 7rem;
-  }
-}
-
-@media print, screen and (max-width: 1024px) {
-  .main-content {
-    padding: 0px 60px;
-  }
-}
-
-@media (min-width: 840px) {
-  header .menu {
-    display: flex;
-  }
-
-  .home-menu-toggle {
-    display: none;
+    padding: 0px 15rem;
   }
 }
 
 @media (max-width: 841px) {
   body {
     padding-top: 0;
-  }
-
-  .main-layout {
-    padding: 3rem 0;
-  }
-
-  header .menu {
-    display: none;
-  }
-
-  .home-menu-toggle {
-    display: inline-block;
   }
 }
 

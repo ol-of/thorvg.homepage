@@ -20,30 +20,21 @@
     </head>
     <body>
         <header>
-            <div>
-                <nav class="menu">
-                    <a href="about.html" class="menu-item"><span class="menu-bg">About</span></a>
-                    <a href="tutorial.html" class="menu-item"><span class="menu-bg">Tutorial</span></a>
-                    <a href="reference.html" class="menu-item"><span class="menu-bg">Reference</span></a>
-                    <a href="docs.html" class="menu-item"><span class="menu-bg">Docs</span></a>
-                    <a href="https://github.com/thorvg/thorvg/releases" target="_blank" rel="noopener noreferrer" class="menu-item">
-                        <span class="menu-bg">Releases<svg xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="25" viewBox="0 0 24 25" stroke="currentColor" role="presentation"><path d="M7 17.0293L17 7.0293"></path><path d="M7 7.0293H17V17.0293"></path></svg></span>
-                    </a>
-                    <a href="viewer.html" class="menu-item"><span class="menu-bg">Viewer</span></a>
-                </nav>
-                <div class="home-menu-toggle">
-                    <svg class="icon-default" viewBox="0 0 241 241" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 34H200.851L204.608 34.178C223.157 35.946 237.952 50.667 239.835 69.183L240.037 73.186V92.78C240.037 82.642 232.321 74.292 222.447 73.287L220.444 73.187H177.339V208.274H136.896L138.153 159.397H118.56L118.306 159.396C96.796 159.259 79.373 141.754 79.373 120.21H138.153V116.292H79.373L79.119 116.291C57.609 116.154 40.187 98.649 40.187 77.105H138.153V73.186H39.933C18.423 73.049 1 55.544 1 34Z" />
-                    </svg>
-                    <svg class="icon-hover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                        <path transform="translate(0, -32)" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-                    </svg>
-                </div>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu"><img class="menu-icon" src="icon/menu.svg" alt="Menu" /></button>
+
+            <nav class="menu">
+                <a href="about.html" class="menu-item"><span class="menu-bg">About</span></a>
+                <a href="tutorial.html" class="menu-item"><span class="menu-bg">Tutorial</span></a>
+                <a href="reference.html" class="menu-item"><span class="menu-bg">Reference</span></a>
+                <a href="docs.html" class="menu-item"><span class="menu-bg">Docs</span></a>
+                <a href="https://github.com/thorvg/thorvg/releases" target="_blank" rel="noopener noreferrer" class="menu-item">
+                    <span class="menu-bg">Releases<svg xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="25" viewBox="0 0 24 25" stroke="currentColor" role="presentation"><path d="M7 17.0293L17 7.0293"></path><path d="M7 7.0293H17V17.0293"></path></svg></span>
+                </a>
+                <a href="viewer.html" class="menu-item"><span class="menu-bg">Viewer</span></a>
+            </nav>
         </header>
 
-        <nav class="home-menu-drawer">
-            <a href="about.html">About</a>
+        <nav class="menu-drawer">
             <a href="tutorial.html">Tutorial</a>
             <a href="reference.html">Reference</a>
             <a href="docs.html">Docs</a>
@@ -117,5 +108,20 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+        const drawer = document.querySelector('.menu-drawer');
+        const header = document.querySelector('header');
+
+        const observer = new MutationObserver(() => {
+            if (drawer.classList.contains('open')) {
+            header.classList.add('has-background');
+            } else {
+            header.classList.remove('has-background');
+            }
+        });
+
+        observer.observe(drawer, { attributes: true, attributeFilter: ['class'] });
+        </script>
     </body>
 </html>

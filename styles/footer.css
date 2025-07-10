@@ -60,6 +60,10 @@ footer .inner {
   color: var(--foreground-color);
 }
 
+.link-item:hover {
+  color: #00f;
+}
+
 .link-item svg {
   width: 28px;
   height: 28px;
@@ -82,31 +86,31 @@ footer .inner {
   color: var(--hover-color);
 }
 
-@media screen and (min-width: 1365px) {
+@media print, screen and (max-width: 1023px) {
   footer {
-    padding: 0px 11.5rem;
+    padding: 0px 2.5rem;
   }
 }
 
-@media print, screen and (max-width: 1364px) {
+@media screen and (min-width: 1024px) {
   footer {
     padding: 0px 7rem;
   }
 }
 
-@media print, screen and (max-width: 1024px) {
+@media print, screen and (min-width: 1365px) {
   footer {
-    padding: 0px 4.5rem;
+    padding: 0px 11.5rem;
   }
 }
 
-@media screen and (max-width: 841px) {
+@media print, screen and (min-width: 2100px) {
   footer {
-    padding: 0px var(--header-height);
+    padding: 0px 15rem;
   }
 }
 
-@media (min-width: 840px) {
+@media (min-width: 841px) {
   footer {
     height: 280px;
   }
