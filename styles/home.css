@@ -206,7 +206,7 @@ p {
 
 .button-content.is-large-primary:hover {
   /*transform: scale(1.02);*/
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 @media print, screen and (max-width: 1023px) {
