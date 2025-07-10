@@ -21,21 +21,21 @@ header {
     left: 0;
     right: 0;
     height: calc(var(--header-height) + 16px);
-    overflow: hidden;
+    overflow: visible;
     z-index: 1000;
     /*background-color: var(--background-color);*/
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0;
+  padding: 8px 0;
 }
 
 header > div {
-    width: 100%;
-    flex: 1 0 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+  width: 100%;
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 header.has-background {
@@ -43,20 +43,24 @@ header.has-background {
 }
 
 header .menu {
-    flex: 1 0 auto;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1em;
+  flex: 1 0 auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
   height: var(--header-height);
-  margin: 8px 0;
   padding: 0 1rem;
 
-  background-color: rgba(255, 255, 255, 0.5);  /* 흐리게 보이는 흰 배경 */
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 경계선 추가 (옵션) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
+}
+
+header .menu.scrolled {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .menu-drawer.open header {
@@ -69,7 +73,6 @@ header .menu {
 }
 
 .main-layout {
-  /*background: var(--background-color);*/
   padding: 5.3rem 0px 5.3rem; /* top horizontal bottom */
 }
 
@@ -224,6 +227,10 @@ p {
 @media print, screen and (max-width: 840px) {
   header {
     padding: 0 1.5rem;
+  }
+
+  .main-layout {
+    padding: 3.5rem 0px;
   }
 }
 
