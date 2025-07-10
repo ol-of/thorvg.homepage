@@ -20,7 +20,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: var(--header-height);
+    height: calc(var(--header-height) + 16px);
     overflow: hidden;
     z-index: 1000;
     /*background-color: var(--background-color);*/
@@ -48,6 +48,15 @@ header .menu {
     justify-content: flex-end;
     align-items: center;
     gap: 1em;
+  height: var(--header-height);
+  margin: 8px 0;
+  padding: 0 1rem;
+
+  background-color: rgba(255, 255, 255, 0.5);  /* 흐리게 보이는 흰 배경 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 경계선 추가 (옵션) */
+  border-radius: 8px;
 }
 
 .menu-drawer.open header {
@@ -95,6 +104,18 @@ h1, h2, body {
 
 .header-h1::selection, .header-h2::selection, .text-body::selection {
   background: var(--hover-color);
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.5);  /* 흐리게 보이는 흰 배경 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 경계선 추가 (옵션) */
+  border-radius: 8px;
+  margin-right: 0;
+  padding: 4px;
 }
 
 /*.header-h1:hover, .header-h2:hover {
