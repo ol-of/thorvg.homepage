@@ -81,10 +81,12 @@ footer .inner {
     /*justify-content: flex-end;*/
 }
 
+/*
 .copyright::selection {
   background-color: var(--foreground-color);
   color: var(--hover-color);
 }
+*/
 
 @media print, screen and (max-width: 1023px) {
   footer {
