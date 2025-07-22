@@ -143,16 +143,15 @@ section[id] {
 
 .prose-vercel :where(h1) {
     font-size: 2.8em;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 0.5em;
     margin-bottom: 1em;
-    padding-top: 0.5em;
     line-height: 1.3333333;
 }
 
 .prose-vercel :where(h2) {
     font-size: 2.1em;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 1.6em;
     margin-bottom: 1em;
     line-height: 1.3333333;
@@ -203,4 +202,5 @@ section[id] {
 
 li p strong {
   margin-right: 0.5em;
+  font-weight: 600;
 }

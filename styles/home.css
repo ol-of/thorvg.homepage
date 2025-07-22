@@ -140,10 +140,9 @@ h1, h2, body {
 .text-body {
   max-width: 68rem;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2.2rem;
-  letter-spacing: .05em;
-  font-family: var(--font-headline);
+  font-family: var(--font-sans);
   /*letter-spacing: -1.8800001144px;*/
 }
 
@@ -177,7 +176,7 @@ p {
   background-color: var(--foreground-color);
   color: var(--background-color);
   text-align: center;
-  border-radius: 0;
+  border-radius: 30rem;
   font-weight: 600;
   line-height: 1.25;
   text-decoration: none;
@@ -219,7 +218,7 @@ p {
   }
 
   .text-body {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     line-height: 2.1rem;
   }
 }

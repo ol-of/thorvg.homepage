@@ -5,7 +5,7 @@ footer {
   background-color: var(--hover-color);
   color: var(--background-color);
   padding-bottom: 3rem !important;
-  padding-top: 3rem !important;
+  padding-top: 3.8rem !important;
 }
 
 footer .inner {

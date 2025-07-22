@@ -16,7 +16,7 @@ code[class*=language-], pre[class*=language-],
 
 .prose :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
     font-weight: inherit;
-    background-color: #f0f0f0;
+    background-color: rgba(0,0,0,0.07);
     border-radius: .375rem;
     border-width: 1px;
     border-color: #f0f0f0;

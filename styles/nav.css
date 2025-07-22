@@ -10,6 +10,11 @@
   position: sticky;
   z-index: 1000;
   /* 헤더 고정 */
+  box-shadow: none; /* 초기엔 그림자 없음 */
+}
+
+.nav.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .logo {
@@ -60,7 +65,7 @@
   display: flex;
   align-items: center;
   height: 60px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -158,13 +163,16 @@
   margin-top: 20px;
   align-self: flex-start;
   border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.10);
   transition: box-shadow 0.3s ease;
   box-shadow: none; /* 초기엔 그림자 없음 */
 }
 
+/*
 .content-toc.scrolled {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
+*/
 
 .content-toc nav {
   padding: 0 1rem;
@@ -182,19 +190,21 @@ ul.toc-list, .toc-children ul {
 .content-toc a {
   display: block;
   width: 100%;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--foreground-color);
   text-decoration: none;
   font-weight: 500;
   border-radius: 30px;
-  padding: 4px 1rem; /* left top right bottom */
+  padding: 2px 1rem; /* left top right bottom */
   white-space: nowrap; /* 줄바꿈 안 함 */
   overflow: hidden; /* 넘치는 텍스트 숨김 */
   text-overflow: ellipsis; /* 말줄임표(...) 처리 */
+  line-height: 2rem;
 }
 
 .toc-children-list a {
-  padding: 2px 1.5rem 2px 2rem; /* left top right bottom */
+  padding: 2px 1rem 2px 1.5rem; /* left top right bottom */
+  line-height: 2rem;
 }
 
 .content-toc .toc-header {

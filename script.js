@@ -1,6 +1,6 @@
 // 스크롤 시 우측 네비 메뉴 그림자
 document.addEventListener('DOMContentLoaded', () => {
-    const toc = document.querySelector('.content-toc');
+    const toc = document.querySelector('.nav');
 
     window.addEventListener('scroll', () => {
         const threshold = 100;
