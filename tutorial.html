@@ -281,7 +281,7 @@
                                         <pre class="prism-code line-numbers"><code class="language-c">// Initialize the ThorVG engine
 tvg::Initializer::init(0);</code></pre>
                                     </div>
-                                    <p>The second parameter of the <code>Initializer::init()</code> requires the ThorVG designated threads number. To use full capacity of the system, you can pass the number of threads to run ThorVG tasks. It will spawn the threads and run Task-Scheduler to progress multiple jobs asynchronously. If you don't know the exact number, you can use <code>std::thread::hardware_concurrency()</code> instead.</p>
+                                    <p>The second parameter of the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html" target="_blank" rel="noopener noreferrer">Initializer</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html#aecd30dc028635b645b0dac5b6facea73" target="_blank" rel="noopener noreferrer">init</a>()</code> requires the ThorVG designated threads number. To use full capacity of the system, you can pass the number of threads to run ThorVG tasks. It will spawn the threads and run Task-Scheduler to progress multiple jobs asynchronously. If you don't know the exact number, you can use <code>std::thread::hardware_concurrency()</code> instead.</p>
                                     <p>ThorVG renders vector scenes to the given canvas buffer. The following shows you an example how to prepare an empty canvas for drawing.</p>
                                     <div aria-label="code snippet" class="code-snippet not-prose">
                                         <pre class="prism-code line-numbers"><code class="language-c">// A canvas target buffer
@@ -291,7 +291,7 @@ auto canvas = tvg::SwCanvas::gen();
 // Setup the canvas target
 canvas->target(buffer, WIDTH, WIDTH, HEIGHT, tvg::ColorSpace::ARGB8888);</code></pre>
                                     </div>
-                                    <p>If you have your own canvas buffer memory, you can pass its pointer to the canvas. <code>SwCanvas::target()</code> requires five parameters: buffer memory, buffer stride size, canvas width, height and Colorspace. The last parameter determines the format of the pixel color channels used during drawing scene on the canvas buffer.</p>
+                                    <p>If you have your own canvas buffer memory, you can pass its pointer to the canvas. <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1SwCanvas.html" target="_blank" rel="noopener noreferrer">SwCanvas</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1SwCanvas.html#a2d4c80a0ba45465b073ee0c279e8c8dc" target="_blank" rel="noopener noreferrer">target</a>()</code> requires five parameters: buffer memory, buffer stride size, canvas width, height and Colorspace. The last parameter determines the format of the pixel color channels used during drawing scene on the canvas buffer.</p>
                                 </section>
                                 <section id="shape">
                                     <h3>Shape</h3>
@@ -341,7 +341,7 @@ path->fill(150, 150, 255);
 // Push the shape into the canvas
 canvas->push(path);</code></pre>
                                     </div>
-                                    <p>By using the Path, lines and Bezier curves can be drawn. Additionally, you can set preset list using <code>Shape:appendPath()</code> for optimal data delivery.</p>
+                                    <p>By using the Path, lines and Bezier curves can be drawn. Additionally, you can set preset list using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Shape.html" target="_blank" rel="noopener noreferrer">Shape</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Shape.html#a3588ea30776a747a22b6ee82dadb9717" target="_blank" rel="noopener noreferrer">appendPath</a>()</code> for optimal data delivery.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square">
@@ -489,7 +489,7 @@ scene->rotate(45);
 // Push the scene into the canvas
 canvas->push(scene);</code></pre>
                                     </div>
-                                    <p>All kinds of Paint type nodes (Shape, Scene and Picture) can be pushed into the Scene as its children. You can scale this logic and build a complex scene by compositing multiple Scenes. In the example, we create a scene-graph tree and we demonstrate how to transform it using <code>translate()</code>, <code>scale()</code>, <code>rotate()</code> methods. ThorVG also supports the <code>transform()</code> method which expects a transformation matrix.</p>
+                                    <p>All kinds of Paint type nodes (Shape, Scene and Picture) can be pushed into the Scene as its children. You can scale this logic and build a complex scene by compositing multiple Scenes. In the example, we create a scene-graph tree and we demonstrate how to transform it using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a5c057876185525c5723215f95a3984f2" target="_blank" rel="noopener noreferrer">scale</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a7841fa0c14643e09735d48042ead68f3" target="_blank" rel="noopener noreferrer">rotate</a>()</code> methods. ThorVG also supports the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code> method which expects a transformation matrix.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square scale-up">
@@ -585,7 +585,7 @@ text2->translate(150, 250);
 // Push the text into the >
 canvas->push(text2);</code></pre>
                                     </div>
-                                    <p>Note that the global font data loaded into ThorVG is typically shared among various text objects. This font data is automatically released when the ThorVG engine is terminated, which is done using <code>Initializer::term()</code>. If you need to immediately free up the font resources, You can manually unload the font data using the <code>Text::unload()</code> API.</p>
+                                    <p>Note that the global font data loaded into ThorVG is typically shared among various text objects. This font data is automatically released when the ThorVG engine is terminated, which is done using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html" target="_blank" rel="noopener noreferrer">Initializer</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html#ace5ab49a2678becae6e7230420a003df" target="_blank" rel="noopener noreferrer">term</a>()</code>. If you need to immediately free up the font resources, You can manually unload the font data using the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Text.html" target="_blank" rel="noopener noreferrer">Text</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Text.html#a2c3cf96821e59b74399c4c076d66fcc8" target="_blank" rel="noopener noreferrer">unload</a>()</code> API.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-rectangle">
@@ -669,12 +669,12 @@ canvas->update(animation->picture());</code></pre>
                                 </section>
                                 <section id="drawing-the-final-step">
                                     <h3>Drawing, the final step</h3>
-                                    <p>Once you've prepared all the paint nodes by pushing them into the canvas, you can request the drawing task as the final step. The <code>Canvas::push()</code> API initiates the preprocessing task for the rendering, but it doesn't trigger rasterization. As all the tasks are performed asynchronously under the hood, you must call <code>Canvas::sync()</code> at the optimal time to ensure synchronization. Finally, you will receive a completed image in the target buffer.</p>
+                                    <p>Once you've prepared all the paint nodes by pushing them into the canvas, you can request the drawing task as the final step. The <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html" target="_blank" rel="noopener noreferrer">Canvas</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html#a82c5ec1c1ba93cf7671642400074201e" target="_blank" rel="noopener noreferrer">push</a>()</code> API initiates the preprocessing task for the rendering, but it doesn't trigger rasterization. As all the tasks are performed asynchronously under the hood, you must call <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html" target="_blank" rel="noopener noreferrer">Canvas</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html#adbca600af79f9a0b8e8366e3be7450e9" target="_blank" rel="noopener noreferrer">sync</a>()</code> at the optimal time to ensure synchronization. Finally, you will receive a completed image in the target buffer.</p>
                                     <div aria-label="code snippet" class="code-snippet not-prose">
                                         <pre class="prism-code line-numbers"><code class="language-c">canvas->draw();
 canvas->sync();</code></pre>
                                     </div>
-                                    <p>After getting the frame image, you can flush out all the pushed paint nodes from the canvas with <code>Canvas::clear()</code> call.</p>
+                                    <p>After getting the frame image, you can flush out all the pushed paint nodes from the canvas with <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html" target="_blank" rel="noopener noreferrer">Canvas</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Canvas.html#a99cdb01cd893f4199b521b754d21aefd" target="_blank" rel="noopener noreferrer">clear</a>()</code> call.</p>
                                 </section>
                             </section>
                             <section id="more-examples">
@@ -765,7 +765,9 @@ canvas->sync();</code></pre>
                         </div>
                         <div>
                             <button id="to-top-btn" aria-label="To top">
-                                <img src="icon/up-arrow.svg" alt="Scroll to top" />
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" alt="Scroll to top"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                    <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" fill="currentColor"/>
+                                </svg>
                             </button>
                         </div>
                     </div>
