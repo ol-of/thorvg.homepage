@@ -111,7 +111,7 @@
 
 .menu-item:hover .menu-bg {
   background-color:#ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 .menu-drawer {
@@ -223,7 +223,7 @@ ul.toc-list, .toc-children ul {
 
 .toc-children a:hover {
   background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 @media print, screen and (min-width: 1025px) {
