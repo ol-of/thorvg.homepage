@@ -112,8 +112,8 @@ pre[class*=language-] {
   border-right: none;
 }
 
-.prism-code .token.keyword {
-    color: var(--code-color-keyword);
+.prism-code .token.operator {
+  color: var(--code-color-operator);
 }
 
 .prism-code .token.class-name {
@@ -134,4 +134,12 @@ pre[class*=language-] {
 
 .prism-code .token.number {
   color: var(--code-color-number);
+}
+
+.prism-code .token.keyword {
+  color: var(--code-color-keyword);
+}
+
+.prism-code .token.punctuation {
+  color: var(--code-color-punctuation);
 }

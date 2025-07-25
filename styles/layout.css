@@ -28,12 +28,17 @@
 }
 
 .column.is-9 a {
-  color: var(--foreground-color);
-  box-shadow: inset 0 var(--shadow-default) #fff, inset 0 var(--shadow-color) var(--accent-color);
+  color: #282828;
+  /*box-shadow: inset 0 var(--shadow-default) #fff, inset 0 var(--shadow-color) var(--accent-color);*/
+  text-decoration: underline;
+  text-decoration-color: #282828b3;
+  text-underline-offset: .1em;
 }
 
 .column.is-9 a:hover {
-  box-shadow: inset 0 var(--shadow-default) #fff, inset 0 var(--shadow-color) #f00;
+  /*box-shadow: inset 0 var(--shadow-default) #fff, inset 0 var(--shadow-color) #f00;*/
+  color: #dadada;
+  text-decoration-color: #dadadab3;
 }
 
 #to-top-btn {
@@ -136,9 +141,11 @@ section[id] {
   scroll-margin-top: 60px; /* 스크롤 이동 시 헤더와 겹치지 않게 */
 }
 
+/*
 .prose-vercel h1::selection, .prose-vercel h2::selection, .prose-vercel h3::selection, .prose-vercel p::selection {
     background-color: var(--hover-color);
 }
+*/
 
 .prose-vercel :where(h1) {
     font-size: 2.8em;

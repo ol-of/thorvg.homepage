@@ -106,7 +106,8 @@ h1, h2, body {
 }
 
 .header-h1::selection, .header-h2::selection, .text-body::selection {
-  background: var(--hover-color);
+  background: var(--foreground-color);
+  color: var(--background-color);
 }
 
 .menu-toggle {
@@ -190,7 +191,7 @@ p {
 
 .button-content:hover {
   box-shadow: none;
-  background-color: var(--hover-color);
+  background-color: #ffffff;
   color: var(--foreground-color);
 }
 
@@ -204,7 +205,6 @@ p {
 }
 
 .button-content.is-large-primary:hover {
-  /*transform: scale(1.02);*/
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -230,6 +230,11 @@ p {
 
   .main-layout {
     padding: 3.5rem 0px;
+  }
+
+  .button-content.is-large-primary {
+    font-size: 1.3rem;
+    padding: 1rem 1.5rem;
   }
 }
 

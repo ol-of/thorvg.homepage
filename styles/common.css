@@ -4,7 +4,7 @@
   --font-mono: "JetBrains Mono", Roboto Mono, monospace;
 
   --background-color: white; /* rgb(245, 243, 255); */
-  --foreground-color: black; /* rgb(33, 30, 109); */
+  --foreground-color: #0f0f0f; /* rgb(33, 30, 109); */
   --hover-color: rgba(0,0,0,0.06); /*#E5FF39;*/
 
   --primary-color: #212121;
@@ -16,12 +16,14 @@
   --code-border-radius: 6px;
   --code-border-color: rgba(0, 0, 0, 0.10);
 
-  --code-color-keyword: oklch(53.5% 0.2058 2.84);
-  --code-color-classname: #005cc5;
+  --code-color-keyword: #e20e2c;
+  --code-color-classname: #f75c5c;
   --code-color-function: oklch(47.18% 0.2579 304);
-  --code-color-comment: #666;
+  --code-color-comment: #757E87;
   --code-color-string: #22863a;
-  --code-color-number: #f75c5c;
+  --code-color-number: #d20fa8;
+  --code-color-operator: #0d6bde;
+  --code-color-punctuation: var(--foreground-color);
 
   --header-height: 60px;
   --nav-color: black;
@@ -45,7 +47,7 @@ h1, h2, h3 {
 
 body {
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
 }
@@ -59,7 +61,7 @@ a:link {
 }
 
 img {
-  width: 100px;
+  width: 160px;
   height: auto;
   display: block;
 }
