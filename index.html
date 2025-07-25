@@ -122,13 +122,20 @@
 
             const observer = new MutationObserver(() => {
                 if (drawer.classList.contains('open')) {
-                header.classList.add('has-background');
+                    header.classList.add('has-background');
                 } else {
-                header.classList.remove('has-background');
+                    header.classList.remove('has-background');
                 }
             });
 
             observer.observe(drawer, { attributes: true, attributeFilter: ['class'] });
+
+            window.addEventListener('resize', () => {
+                if (drawer.classList.contains('open')) {
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    menuToggle.click();
+                }
+            });
 
             /* */
             document.addEventListener('DOMContentLoaded', () => {
