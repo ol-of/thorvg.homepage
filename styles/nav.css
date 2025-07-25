@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   height: 60px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -191,7 +191,7 @@ ul.toc-list, .toc-children ul {
 .content-toc a {
   display: block;
   width: 100%;
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--foreground-color);
   text-decoration: none;
   font-weight: 500;
@@ -210,8 +210,9 @@ ul.toc-list, .toc-children ul {
 
 .content-toc .toc-header {
   font-family: var(--font-heheadline);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+  color: #474747;
   text-transform: uppercase;
   pointer-events: none;
 }

@@ -3,9 +3,11 @@
   --font-sans: "Open Sans", Montserrat, Comfortaa, sans-serif;
   --font-mono: "JetBrains Mono", Roboto Mono, monospace;
 
-  --background-color: white; /* rgb(245, 243, 255); */
-  --foreground-color: #0f0f0f; /* rgb(33, 30, 109); */
-  --hover-color: rgba(0,0,0,0.06); /*#E5FF39;*/
+  --background-color: white;
+  --foreground-color: rgb(14,14,14);
+  --hover-color: rgba(0,0,0,0.06);
+  --color-text-brand: #007be5;
+  --scrollbar-color: color-mix(in oklab, #0d0d0d 30%, transparent);
 
   --primary-color: #212121;
   --secondary-color: rgb(69 65 62);
@@ -14,7 +16,7 @@
   --accent-color: #AFF4FF; /* AFF4FF */
 
   --code-border-radius: 6px;
-  --code-border-color: rgba(0, 0, 0, 0.10);
+  --code-border-color: rgba(0,0,0,0.12);
 
   --code-color-keyword: #e20e2c;
   --code-color-classname: #f75c5c;
@@ -35,6 +37,11 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth; /* 인덱스 이동 시 스크롤 되며 이동 */
+}
+
+* {
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: thin;
 }
 
 *, :before, :after {

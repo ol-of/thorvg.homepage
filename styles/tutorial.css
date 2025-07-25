@@ -9,7 +9,7 @@
 .example-frame-square, .example-frame-rectangle {
   display: inline-block; /* 자식 크기에 맞춰진다 */
   border-radius: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--code-border-color);
   /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
 }
 

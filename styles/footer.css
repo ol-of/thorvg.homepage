@@ -69,6 +69,10 @@ footer .inner {
   height: 28px;
 }copyright
 
+.logo-wrapper {
+  user-select: none;
+}
+
 .logo-wrapper img {
   width: 180px !important;
   height: auto;

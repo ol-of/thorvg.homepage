@@ -8,7 +8,7 @@
 }
 
 .collection-small-item, .collection-medium-item {
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--code-border-color);
   border-radius: 0.5rem;
   background-color: #fff;
   padding: 1.5rem 1rem;
@@ -45,7 +45,7 @@
 .collection-item-text {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111;
+  color: #474747;
   text-align: center;
 }
 

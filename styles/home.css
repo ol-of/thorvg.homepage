@@ -141,8 +141,8 @@ h1, h2, body {
 .text-body {
   max-width: 68rem;
   font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 2.2rem;
+  font-size: 1.15rem;
+  line-height: 2.1rem;
   font-family: var(--font-sans);
   /*letter-spacing: -1.8800001144px;*/
 }
@@ -218,7 +218,7 @@ p {
   }
 
   .text-body {
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 2.1rem;
   }
 }
@@ -233,7 +233,7 @@ p {
   }
 
   .button-content.is-large-primary {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     padding: 1rem 1.5rem;
   }
 }

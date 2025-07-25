@@ -4,7 +4,7 @@ code,
 code[class*=language-], pre[class*=language-],
 .line-numbers .line-numbers-rows {
   font-family: var(--font-mono);
-  font-size: .875rem;
+  font-size: .8rem;
   line-height: 1.7;
   font-weight: 400;
 }

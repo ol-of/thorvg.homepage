@@ -290,7 +290,7 @@
                             <section id="smart-rendering">
                                 <h2>Smart Rendering</h2>
                                 <p>ThorVG supports smart partial rendering, enabling more efficient rendering workflows by updating only the portions of a vector scene that have changed. By internally tracking modified regions, it minimizes unnecessary redraws and optimizes overall performance. This feature delivers significant performance benefits, especially in animations and interactive graphics where only part of the scene changes between frames. By avoiding full-scene rendering, it can reduce computational workload—making it particularly well-suited for mobile and embedded systems where energy efficiency is essential. It also help to ensure smoother visual updates, especially for dynamic UIs and real-time animations, where rendering responsiveness is critical.</p>
-                                <div class="example-container px-5"><img src="image/example_partial.png" /></div>
+                                <div class="example-container px-5"><img src="image/example_partial.svg" /></div>
                                 <p>The figure above illustrates geometry changes and highlights the minimal redraw region (outlined in red) that needs to be updated. Only the modified area between the previous and current frames is selectively redrawn, significantly enhancing performance.</p>
                                 <p>For a showcase, please visit <a href="https://hermet.github.io/partial-test/" target="_blank" rel="noopener noreferrer">this page</a>, which demonstrates a partial rendering performance comparison using ThorVG's software renderer.</p>
                             </section>
@@ -338,14 +338,14 @@
                                     <div class="col-lg-3"><h3>Canva iOS</h3></div>
                                     <div class="col-lg-7">
                                         <p><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a>, a leading visual communication platform, is a household name among creators, marketers, designers, students, and more, with millions of users worldwide. It empowers users to create stunning visual content with a user-friendly interface and a vast library of templates and design elements. The Canva iOS app transitioned from the existing Lottie animation engine to ThorVG for Lottie animations, resulting in approximately an 80% improvement in rendering speed and a 70% reduction in peak memory usage.</p>
-                                        <img class="img-fluid" src="image/example_canvaios.avif" />
+                                        <img class="img-fluid" src="image/example_canvaios.png" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><h3>dotLottie</h3></div>
                                     <div class="col-lg-7">
                                         <p><a href="https://dotlottie.io/" target="_blank" rel="noopener noreferrer">dotLottie</a> is an open-source file format that aggregates one or more Lottie files and their associated resources, such as images and fonts, into a single file. This enables an efficient and easy distribution of animations. dotLottie files are ZIP archives compressed with the Deflate compression method and carry the file extension of “.lottie”. Think of it as a superset of Lottie. LottieFiles aims to achieve just that. <a href="https://github.com/LottieFiles/dotlottie-rs" target="_blank" rel="noopener noreferrer">dotLottie player</a> by <a href="https://lottiefiles.com/" target="_blank" rel="noopener noreferrer">LottieFiles</a> is now powered by ThorVG.</p>
-                                        <img class="img-fluid" src="image/example_dotlottie_edited.avif" />
+                                        <img class="img-fluid" src="image/example_dotlottie_edited.svg" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -366,14 +366,14 @@
                                     <div class="col-lg-3"><h3>Lottie Creator</h3></div>
                                     <div class="col-lg-7">
                                         <p><a href="https://creator.lottiefiles.com/" target="_blank" rel="noopener noreferrer">Lottie Creator</a> is designed to create ultra-lightweight, highly customizable and interactive animations for web, apps and social. Supercharged with AI-based Motion Copilot. ThorVG is powering the Canvas engine behind Lottie Creator—enabling fast and scalable vector graphics rendering across platforms.</p>
-                                        <img class="img-fluid" src="image/example_creator.avif" />
+                                        <img class="img-fluid" src="image/example_creator.png" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3"><h3>LVGL</h3></div>
                                     <div class="col-lg-7">
                                         <p><a href="https://lvgl.io/" target="_blank" rel="noopener noreferrer">LVGL</a> is an open-source graphics library specifically designed for embedded systems with limited resources. It is lightweight and highly customizable, providing support for graphical user interfaces (GUIs) on microcontrollers, IoT devices, and other embedded platforms. ThorVG serves as the vector drawing primitives library in the LVGL framework.</p>
-                                        <img class="img-fluid" src="image/example_lvgl.avif" />
+                                        <img class="img-fluid" src="image/example_lvgl.svg" />
                                     </div>
                                 </div>
                                 <div class="row">
