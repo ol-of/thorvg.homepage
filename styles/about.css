@@ -26,6 +26,8 @@
   width: 100%;
   margin: 1.5rem 0;
   box-sizing: border-box; /* padding 포함 너비 계산을 위해 */
+  display: flex;
+  justify-content: center;
 }
 
 .sample {

@@ -264,9 +264,9 @@
                             <section id="structural-design">
                                 <h2>Structural Design</h2>
                                 <p>ThorVG is designed for a wide range of programs, offering adaptability for integration and use in various applications and systems. It achieves this through a single binary with selectively buildable, modular components in a building block style. This ensures both optimal size and easy maintanence.</p>
-                                <div class="example-container px-5"><img src="image/example_structure.svg" /></div>
+                                <div class="example-container"><img src="image/example_structure.svg" style="max-width: 600px;" /></div>
                                 <p>If your program includes the main renderer, you can seamlessly utilize ThorVG APIs by transitioning drawing contexts between the main renderer and ThorVG. Throughout these API calls, ThorVG effectively serializes drawing commands among volatile paint nodes. Subsequently, it undertakes synchronous or asynchronous rendering via its backend raster engines. Additionally, ThorVG is adept at handling vector images, including formats like SVG, and it remains adaptable for accommodating additional popular formats as needed. In the rendering process, the library may generate intermediate frame buffers for scene compositing, though only when essential. The accompanying diagram provides a concise overview of how to effectively incorporate ThorVG within your system.</p>
-                                <div class="example-container px-5"><img src="image/example_flow.png" /></div>
+                                <div class="example-container px-5"><img src="image/example_flow.svg" /></div>
                             </section>
                             <section id="render-backends">
                                 <h2>Render Backends</h2>
@@ -284,16 +284,12 @@
                                 <h2>Threading</h2>
                                 <p>ThorVG incorporates a threading mechanism that aims to seamlessly acquire subsequent scenes without unnecessary delays. It operates using a finely-tuned task scheduler based on thread pools, encompassing various tasks such as encoding, decoding, updating, and rendering. This design ensures that all tasks can effectively leverage multi-processing capabilities.</p>
                                 <p>The task scheduler has been meticulously crafted to conceal complexity, streamline integration, and enhance user convenience. Therefore, the policy it employs is optional, allowing users to select it based on their specific requirements.</p>
-                                <div class="example-container px-5">
-                                    <img src="image/thorvg_threading.webp" />
-                                </div>
+                                <div class="example-container"><img src="image/thorvg_threading.svg" /></div>
                             </section>
                             <section id="smart-rendering">
                                 <h2>Smart Rendering</h2>
                                 <p>ThorVG supports smart partial rendering, enabling more efficient rendering workflows by updating only the portions of a vector scene that have changed. By internally tracking modified regions, it minimizes unnecessary redraws and optimizes overall performance. This feature delivers significant performance benefits, especially in animations and interactive graphics where only part of the scene changes between frames. By avoiding full-scene rendering, it can reduce computational workload—making it particularly well-suited for mobile and embedded systems where energy efficiency is essential. It also help to ensure smoother visual updates, especially for dynamic UIs and real-time animations, where rendering responsiveness is critical.</p>
-                                <div class="example-container px-5">
-                                    <img src="image/example_partial.png" />
-                                </div>
+                                <div class="example-container px-5"><img src="image/example_partial.png" /></div>
                                 <p>The figure above illustrates geometry changes and highlights the minimal redraw region (outlined in red) that needs to be updated. Only the modified area between the previous and current frames is selectively redrawn, significantly enhancing performance.</p>
                                 <p>For a showcase, please visit <a href="https://hermet.github.io/partial-test/" target="_blank" rel="noopener noreferrer">this page</a>, which demonstrates a partial rendering performance comparison using ThorVG's software renderer.</p>
                             </section>
