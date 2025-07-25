@@ -274,3 +274,12 @@ ul.toc-list, .toc-children ul {
     margin-left: 0;
   }
 }
+
+.fade-in-on-load {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in-on-load.show {
+  opacity: 1;
+}
