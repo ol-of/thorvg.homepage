@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="styles/layout.css">
         <link rel="stylesheet" href="styles/code.css">
         <link rel="stylesheet" href="styles/footer.css">
-        <link rel="stylesheet" href="about/style.css">
+        <link rel="stylesheet" href="styles/tutorial.css">
 
         <script src="script.js"></script>
     </head>
@@ -76,7 +76,7 @@
                             </section>
                             <section id="build-and-install">
                                 <h2>Build and install</h2>
-                                <p>You can download the ThorVG tarball via the <a href="https://github.com/thorvg/thorvg/tags" target="_blank" rel="noopener noreferrer">Releases</a> link.  The latest version is recommended. ThorVG supports <a href="https://mesonbuild.com/" target="_blank" rel="noopener noreferrer">meson</a> build system. Install the meson and <a href="https://ninja-build.org/" target="_blank" rel="noopener noreferrer">ninja</a> if you don't have them already.</p>
+                                <p>You can download the ThorVG tarball via the <a href="https://github.com/thorvg/thorvg/tags" target="_blank" rel="noopener noreferrer">releases</a> link.  The latest version is recommended. ThorVG supports <a href="https://mesonbuild.com/" target="_blank" rel="noopener noreferrer">meson</a> build system. Install the meson and <a href="https://ninja-build.org/" target="_blank" rel="noopener noreferrer">ninja</a> if you don't have them already.</p>
                                 <p>Run meson to configure ThorVG in the thorvg root folder.</p>
                                 <div class="code-block">
                                     <pre class="code-content">meson setup builddir</pre>
@@ -121,7 +121,7 @@
                                 <p>Note that some systems might include ThorVG package as a default component. In that case, you can skip this manual installation.</p>
                                 <section id="build-with-visual-studio">
                                     <h3>Build with Visual Studio</h3>
-                                    <p>If you want to create Visual Studio project files, use the command --backend=vs. The resulting solution file (thorvg.sln) will be located in the build folder.</p>
+                                    <p>If you want to create Visual Studio project files, use the command <code>--backend=vs</code>. The resulting solution file (thorvg.sln) will be located in the build folder.</p>
                                     <div class="code-block">
                                         <pre class="code-content">meson setup builddir --backend=vs</pre>
                                         <button class="copy-button" type="button" aria-label="Copy to clipboard">
@@ -164,7 +164,7 @@
                                             </span>
                                         </button>
                                     </div>
-                                    <p>Run ninja to build and install ThorVG:</p>
+                                    <p>Run ninja to build and install ThorVG.</p>
                                     <div class="code-block">
                                         <pre class="code-content">./bootstrap-vcpkg.sh</pre>
                                         <button class="copy-button" type="button" aria-label="Copy to clipboard">
@@ -489,7 +489,7 @@ scene->rotate(45);
 // Push the scene into the canvas
 canvas->push(scene);</code></pre>
                                     </div>
-                                    <p>All kinds of Paint type nodes (Shape, Scene and Picture) can be pushed into the Scene as its children. You can scale this logic and build a complex scene by compositing multiple Scenes. In the example, we create a scene-graph tree and we demonstrate how to transform it using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a5c057876185525c5723215f95a3984f2" target="_blank" rel="noopener noreferrer">scale</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a7841fa0c14643e09735d48042ead68f3" target="_blank" rel="noopener noreferrer">rotate</a>()</code> methods. ThorVG also supports the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code> method which expects a transformation matrix.</p>
+                                    <p>All kinds of Paint type nodes (Shape, Scene and Picture) can be pushed into the Scene as its children. You can scale this logic and build a complex scene by compositing multiple Scenes. In the example, we create a scene-graph tree and we demonstrate how to transform it using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a5c057876185525c5723215f95a3984f2" target="_blank" rel="noopener noreferrer">scale</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a7841fa0c14643e09735d48042ead68f3" target="_blank" rel="noopener noreferrer">rotate</a>()</code> methods. ThorVG also supports the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ac9f6ba428afe884bcc2861de0a2a96f4" target="_blank" rel="noopener noreferrer">transform</a>()</code> method which expects a transformation matrix.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square scale-up">
@@ -537,7 +537,7 @@ canvas->push(png);</code></pre>
                                 </section>
                                 <section id="text">
                                     <h3>Text</h3>
-                                    <p>ThorVG offers robust text rendering capabilities, including support for Scalable TrueType Fonts(TTF). It efficiently handles Unicode text, accepting UTF-8(or ASCII) characters as input. ThorVG processes these characters by converting them into Unicode codepoints, subsequently generating vector data for the corresponding glyphs. Additionally, ThorVG utilizes the metrics of TTF glyphs to create horizontal layouts, further enhancing its text rendering functionality.</p>
+                                    <p>ThorVG offers robust text rendering capabilities, including support for Scalable TrueType Fonts (TTF). It efficiently handles Unicode text, accepting UTF-8 (or ASCII) characters as input. ThorVG processes these characters by converting them into Unicode codepoints, subsequently generating vector data for the corresponding glyphs. Additionally, ThorVG utilizes the metrics of TTF glyphs to create horizontal layouts, further enhancing its text rendering functionality.</p>
                                     <div aria-label="code snippet" class="code-snippet not-prose">
                                         <pre class="prism-code line-numbers"><code class="language-c">// Load a global font data
 Text::load(EXAMPLE_DIR"/arial.ttf");
@@ -582,33 +582,33 @@ fill->colorStops(colorStops, 2);
 text2->fill(fill);
 // Set the position
 text2->translate(150, 250);
-// Push the text into the >
+// Push the text into the canvas
 canvas->push(text2);</code></pre>
                                     </div>
                                     <p>Note that the global font data loaded into ThorVG is typically shared among various text objects. This font data is automatically released when the ThorVG engine is terminated, which is done using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html" target="_blank" rel="noopener noreferrer">Initializer</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Initializer.html#ace5ab49a2678becae6e7230420a003df" target="_blank" rel="noopener noreferrer">term</a>()</code>. If you need to immediately free up the font resources, You can manually unload the font data using the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Text.html" target="_blank" rel="noopener noreferrer">Text</a>::<a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Text.html#a2c3cf96821e59b74399c4c076d66fcc8" target="_blank" rel="noopener noreferrer">unload</a>()</code> API.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-rectangle">
-<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="gradient1" x1="0" y1="0.5" x2="1" y2="0.5">
-        <stop offset="0%" stop-color="red" stop-opacity="1" />
-        <stop offset="100%" stop-color="yellow" stop-opacity="1" />
-        </linearGradient>
-    </defs>
+                                            <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                                                <defs>
+                                                    <linearGradient id="gradient1" x1="0" y1="0.5" x2="1" y2="0.5">
+                                                    <stop offset="0%" stop-color="red" stop-opacity="1" />
+                                                    <stop offset="100%" stop-color="yellow" stop-opacity="1" />
+                                                    </linearGradient>
+                                                </defs>
 
-    <g transform="translate(-100, -35)">
-        <!-- Solid color -->
-        <text x="150" y="150" font-family="Arial" font-size="50" fill="black">
-        ThorVG Solid Text
-        </text>
+                                                <g transform="translate(-100, -35)">
+                                                    <!-- Solid color -->
+                                                    <text x="150" y="150" font-family="Arial" font-size="50" fill="black">
+                                                    ThorVG Solid Text
+                                                    </text>
 
-        <!-- Gradient color -->
-        <text x="150" y="250" font-family="Arial" font-size="50" fill="url(#gradient1)">
-        ThorVG Gradient Text
-        </text>
-    </g>
-</svg>
+                                                    <!-- Gradient color -->
+                                                    <text x="150" y="250" font-family="Arial" font-size="50" fill="url(#gradient1)">
+                                                    ThorVG Gradient Text
+                                                    </text>
+                                                </g>
+                                            </svg>
                                         </div>
                                     </div>
                                 </section>
@@ -653,7 +653,7 @@ auto duration = animation->duration();
 // Push the picture into the canvas
 canvas->push(picture);</code></pre>
                                     </div>
-                                    <p>First, an animation and a picture are generated. The Lottie file(lottie.json) is loaded into the picture, and then the picture is added to the canvas. The animation frames are controlled using the animation object to play the Lottie animation. Also you might want to know the animation duration time to run your animation loop.</p>
+                                    <p>First, an animation and a picture are generated. The Lottie file (lottie.json) is loaded into the picture, and then the picture is added to the canvas. The animation frames are controlled using the animation object to play the Lottie animation. Also you might want to know the animation duration time to run your animation loop.</p>
                                     <div aria-label="code snippet" class="code-snippet not-prose">
                                         <pre class="prism-code line-numbers"><code class="language-c">// Set a current animation frame to display
 animation->frame(animation->totalFrame() * progress);
