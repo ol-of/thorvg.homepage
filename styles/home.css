@@ -222,9 +222,19 @@ p {
     padding: 1rem 1.5rem;
   }
 
+  .header-h2 {
+    max-width: 100%;
+  }
+
   .text-body {
     font-size: 1rem;
     line-height: 1.95rem;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  .header-h2 {
+    font-size: 3.8rem;
   }
 }
 
