@@ -53,6 +53,7 @@
 
 .row {
   display: flex;
+  flex-direction: column; /* 기본 세로 배치 */
   flex-wrap: wrap;  /* 공간이 부족할 때 요소가 줄어들거나 오버플로우 */
   width: 100%;
   margin: 0.5em 0;
@@ -63,26 +64,18 @@
   box-sizing: border-box;
 }
 
-.row {
-  display: flex;
-  flex-direction: column; /* 기본 세로 배치 */
-}
-
 .col-lg-3 {
   align-self: stretch;
 }
 
 .col-lg-3 h3 {
-  padding-top: 0;
+  padding-top: 0.6rem;
   margin-top: 0.8em;
+  margin-bottom: .2rem;
   font-size: 1.35em;
 }
-/*
-.col-lg-7 img {
-  border-radius: 0.5rem;
-}
-*/
-@media (min-width: 992px) {
+
+@media (min-width: 992px) { /*******************************************/
   .row {
     flex-direction: row; /* 가로 배치 */
   }
@@ -90,6 +83,7 @@
   .col-lg-3 {
     width: 30%;
     max-width: 200px;
+    padding-top: 0;
     padding-right: 0.75em;
     display: flex;
     flex-direction: column;
