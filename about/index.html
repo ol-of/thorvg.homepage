@@ -12,12 +12,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/nav.css">
-        <link rel="stylesheet" href="styles/layout.css">
-        <link rel="stylesheet" href="styles/collection.css">
-        <link rel="stylesheet" href="styles/footer.css">
-        <link rel="stylesheet" href="about/style.css">
+        <link rel="stylesheet" href="styles/common.css" />
+        <link rel="stylesheet" href="styles/nav.css" />
+        <link rel="stylesheet" href="styles/layout.css" />
+        <link rel="stylesheet" href="styles/collection.css" />
+        <link rel="stylesheet" href="styles/footer.css" />
+        <link rel="stylesheet" href="styles/about.css" />
 
         <script src="script.js"></script>
     </head>
@@ -67,59 +67,17 @@
                             <section id="why-thorvg">
                                 <h1>Why ThorVG?</h1>
                                 <p>ThorVG (Thor Vector Graphics) is an open-source graphics library designed for creating vector-based scenes and animations. It combines immense power with remarkable lightweight efficiency, as Thor embodies a dual meaning—symbolizing both thunderous strength and lightning-fast agility. Embracing the philosophy of simpler is better, the ThorVG project provides intuitive, user-friendly interfaces while maintaining a compact footprint and minimal overhead.</p>
-                                <p>The following list shows primitives that are supported by ThorVG:</p>
+                                <p>The following list shows primitives that are supported by ThorVG.</p>
                                 <ul>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong>Lines & Shapes</strong>
-                                        Rectangle, circles, and paths with coordinate control
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Filling</strong>
-                                        Solid colors, linear & radial gradients, and path clipping
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Stroking</strong>
-                                        Stroke width, join, cap, dash patterns, and trimming
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Scene Management</strong>
-                                        Retainable scene graph & object transformations
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Composition</strong>
-                                        Various blending and masking
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Text</strong>
-                                        Unicode characters and horizontal text layout using the scalable fonts (TTF)
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Images</strong>
-                                        SVG, JPG, PNG, WebP, Raw Bitmap
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose">
-                                        <strong class="not-prose">Effects</strong>
-                                        Blur, drop shadow, tint, tritone and color replacement
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="not-prose"><strong class="not-prose">Animation</strong>Lottie</p>
-                                    </li>
+                                    <li><p class="not-prose"><strong>Lines & Shapes</strong>Rectangle, circles, and paths with coordinate control</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Filling</strong>Solid colors, linear & radial gradients, and path clipping</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Stroking</strong>Stroke width, join, cap, dash patterns, and trimming</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Scene Management</strong>Retainable scene graph & object transformations</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Composition</strong>Various blending and masking</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Text</strong>Unicode characters and horizontal text layout using the scalable fonts (TTF)</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Images</strong>SVG, JPG, PNG, WebP, Raw Bitmap</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Effects</strong>Blur, drop shadow, tint, tritone and color replacement</p></li>
+                                    <li><p class="not-prose"><strong class="not-prose">Animation</strong>Lottie</p></li>
                                 </ul>
                                 <div class="collection-medium-grid">
                                     <div class="collection-medium-item">
@@ -316,7 +274,7 @@
                                 <p>ThorVG supports the most powerful Lottie Animation features (<a href="https://lottiefiles.com/supported-features" target="_blank" rel="noopener noreferrer">See dotLottie Player</a>). Lottie is an industry standard, JSON-based vector animation file format that enables seamless distribution of animations on any platform, akin to shipping static assets. These files are compact and compatible with various devices, scaling up or down without pixelation. With Lottie, you can easily create, edit, test, collaborate, and distribute animations in a user-friendly manner. For more information, please visit <a href="https://lottie.github.io/" target="_blank" rel="noopener noreferrer">Lottie Animation Community</a>' website.</p>
                                 <div class="example-container px-10">
                                     <div class="sample">
-                                        <video src="video/example_lottie.mov" controls></video>
+                                        <video src="video/example_lottie.mov" controls loop autoplay muted></video>
                                         <div class="collection-small-item-content-wrapper">
                                             <div class="collection-item-text">Lottie animations powered by ThorVG</div>
                                         </div>
