@@ -7,7 +7,7 @@
   --foreground-color: rgb(14,14,14);
   --hover-color: rgba(0,0,0,0.06);
   --color-text-brand: #007be5;
-  --scrollbar-color: color-mix(in oklab, #0d0d0d 30%, transparent);
+  --scrollbar-color: #0d0d0d;
 
   --primary-color: #212121;
   --secondary-color: rgb(69 65 62);
