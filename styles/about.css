@@ -81,11 +81,14 @@
   .col-lg-3 {
     width: 30%;
     max-width: 200px;
-    padding-top: 0;
     padding-right: 0.75em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* 상단 정렬 */
+  }
+
+  .col-lg-3 h3 {
+    padding-top: 0;
   }
 
   .col-lg-7 {
