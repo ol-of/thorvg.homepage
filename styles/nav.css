@@ -119,7 +119,7 @@
   background-color: var(--foreground-color);
   flex-direction: column;
   z-index: 999;
-  transform: translateY(-100%);
+  transform: translateY(calc(-100% - var(--header-height)));
   transition: transform 0.3s ease-in-out;
   padding: 3rem 0;
 }
