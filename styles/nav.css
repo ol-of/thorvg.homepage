@@ -5,12 +5,12 @@
   height: var(--header-height);
   background-color: var(--nav-background-color);
   border-bottom: 1px solid var(--code-border-color);
-  /* 헤더 고정 */
+  /* [ 헤더 고정 */
   top: 0;
   position: sticky;
   z-index: 1000;
-  /* 헤더 고정 */
-  box-shadow: none; /* 초기엔 그림자 없음 */
+  /* ] 헤더 고정 */
+  box-shadow: none;
 }
 
 .nav.scrolled {
@@ -53,8 +53,6 @@
   margin-right: -6px;
   border: none;
   background-color: transparent;
-  /*align-items: center;
-  justify-content: center;*/
 }
 
 .menu-toggle img {
@@ -76,7 +74,6 @@
 .menu-item.is-selected {
   pointer-events: none;
   cursor: default;
-  /*opacity: 0.5;*/
 }
 
 .menu-item.is-selected .menu-bg {
@@ -91,7 +88,6 @@
 }
 
 .menu-item svg {
-  /*  class="inline-block w-4 align-middle transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" */
   vertical-align: middle;
   width: 16px;
   height: 16px;
@@ -167,12 +163,6 @@
   box-shadow: none; /* 초기엔 그림자 없음 */
 }
 
-/*
-.content-toc.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-}
-*/
-
 .content-toc nav {
   padding: 0 1rem;
 }
@@ -194,7 +184,7 @@ ul.toc-list, .toc-children ul {
   text-decoration: none;
   font-weight: 500;
   border-radius: 30px;
-  padding: 2px 1rem; /* left top right bottom */
+  padding: 2px 1rem;
   white-space: nowrap; /* 줄바꿈 안 함 */
   overflow: hidden; /* 넘치는 텍스트 숨김 */
   text-overflow: ellipsis; /* 말줄임표(...) 처리 */
@@ -202,7 +192,7 @@ ul.toc-list, .toc-children ul {
 }
 
 .toc-children-list a {
-  padding: 2px 1rem 2px 1.5rem; /* left top right bottom */
+  padding: 2px 1rem 2px 1.5rem;
   line-height: 2rem;
 }
 

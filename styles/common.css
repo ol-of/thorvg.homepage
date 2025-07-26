@@ -1,6 +1,6 @@
 :root {
-  --font-headline: Poppins, sans-serif;
-  --font-sans: "Open Sans", Montserrat, Comfortaa, sans-serif;
+  --font-headline: Poppins, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", Roboto Mono, monospace;
 
   --background-color: white;
@@ -60,7 +60,7 @@ body {
 }
 
 main, section, div {
-    display: block;
+  display: block;
 }
 
 a:link {
@@ -78,27 +78,27 @@ img {
 }
 
 .px-10 {
-    padding-left: 5rem !important;
-    padding-right: 5rem !important;
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
 }
 
 .px-5 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 
 .py-6 {
-    padding-bottom: 3rem !important;
-    padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+  padding-top: 3rem !important;
 }
 
 .py-5 {
-    padding-bottom: 1.5rem !important;
-    padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
 }
 
 .mb-4 {
-    margin-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .margin-top {
@@ -114,7 +114,7 @@ img {
 }
 
 .margin-small {
- margin: 1rem
+  margin: 1rem
 }
 
 .margin-small-medium {
@@ -132,23 +132,3 @@ img {
 .max-width-med-large {
   width: 100%;
 }
-
-/*
-a:link {
-  color: #42A5F5;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #EA80FC;
-  text-decoration: none;
-}
-
-a:link:hover {
-  color: #1565C0;
-}
-
-a:visited:hover {
-  color: #8E24AA;
-}
-*/

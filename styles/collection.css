@@ -19,19 +19,14 @@
   transition: box-shadow 0.2s ease;
 }
 
-/*
-.collection-small-item:hover, .collection-medium-item:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-*/
-
 .collection-small-item-image {
   width: 2.5rem;
   height: 2.5rem;
   object-fit: contain;
 }
 
-.collection-small-item-content-wrapper, .collection-medium-item-content-wrapper {
+.collection-small-item-content-wrapper,
+.collection-medium-item-content-wrapper {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;

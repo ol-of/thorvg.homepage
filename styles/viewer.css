@@ -1,5 +1,5 @@
 :root {
-  --upload-height: 5rem; /* 버튼 영역 + 패딩 포함 예측값 */
+  --upload-height: 5rem;
 }
 
 html, body {
@@ -27,12 +27,12 @@ html, body {
   background-color: #171717;
   color: white;
   position: relative;
-  overflow: hidden; /* controls 자체는 스크롤 없음 */
+  overflow: hidden;
 }
 
 .section-controls {
   flex: 1; /* 남는 공간을 모두 차지 */
-  overflow-y: auto; /* 스크롤 가능 */
+  overflow-y: auto;
   padding-bottom: 1rem;
   box-sizing: border-box;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -164,7 +164,6 @@ svg {
   padding-left: 1rem;
   padding-right: 1.5rem;
   background: rgba(255, 255, 255, 0.075);
-  /*color: #6B6B6B;*/
   text-align: left;
   border: none;
   flex: 1;

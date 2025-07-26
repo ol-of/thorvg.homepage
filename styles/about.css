@@ -4,15 +4,13 @@
 }
 
 .example-image-wrapper {
-  display: inline-block;   /* 자식 높이에 맞게 wrapper 크기 조절 */
-  width: 100%;             /* 너비는 부모에 맞춤 */
-  text-align: center;      /* 자식(img)을 가운데 정렬 */
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 .example-image-wrapper img {
-  display: inline-block;   /* center 정렬 위해 필요 */
-  /*max-width: 100%;*/         /* 반응형 이미지 설정 (선택사항) */
-  /*height: auto;*            /* 이미지 원본 비율 유지 */
+  display: inline-block;
 }
 
 .logo-lottie-files {
@@ -25,7 +23,7 @@
 .example-container {
   width: 100%;
   margin: 1.5rem 0;
-  box-sizing: border-box; /* padding 포함 너비 계산을 위해 */
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
 }
@@ -35,7 +33,7 @@
   padding: 1.5rem;
   border: 1px solid var(--code-border-color);
   border-radius: 0.5rem;
-  box-sizing: border-box; /* padding과 border가 width에 포함되도록 */
+  box-sizing: border-box;
 }
 
 .sample video, .example-container img {
@@ -54,10 +52,10 @@
 .row {
   display: flex;
   flex-direction: column; /* 기본 세로 배치 */
-  flex-wrap: wrap;  /* 공간이 부족할 때 요소가 줄어들거나 오버플로우 */
+  flex-wrap: wrap; /* 공간이 부족할 때 요소가 줄어들거나 오버플로우 */
   width: 100%;
   margin: 0.5em 0;
-  box-sizing: border-box; /* 중요! */
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
@@ -75,7 +73,7 @@
   font-size: 1.35em;
 }
 
-@media (min-width: 992px) { /*******************************************/
+@media (min-width: 992px) {
   .row {
     flex-direction: row; /* 가로 배치 */
   }

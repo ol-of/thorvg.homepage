@@ -9,7 +9,7 @@ code[class*=language-], pre[class*=language-],
   font-weight: 400;
 }
 
-/* 단일 코드 */
+/* [ 단일 코드 */
 .prose code {
     word-wrap: break-word;
 }
@@ -23,7 +23,7 @@ code[class*=language-], pre[class*=language-],
     padding: .125rem .25rem;
 }
 
-/* 단일 코드 */
+/* ] 단일 코드 */
 
 /* 한 줄짜리 코드 */
 .code-block {
@@ -78,19 +78,19 @@ code[class*=language-], pre[class*=language-],
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animation */
+  /* [ animation */
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
-  /* animation */
+  /* ] animation */
 }
 
-/* animation */
+/* [ animation */
 .copy-icon.active, .done-icon.active {
   opacity: 1;
   pointer-events: auto;
 }
-/* animation */
+/* ] animation */
 
 /* Prims */
 
