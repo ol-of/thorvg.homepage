@@ -144,7 +144,6 @@ h1, h2, body {
   font-size: 1.15rem;
   line-height: 2.1rem;
   font-family: var(--font-sans);
-  /*letter-spacing: -1.8800001144px;*/
 }
 
 .columns {
@@ -216,11 +215,6 @@ p {
   .main-content {
     padding: 0px 2.5rem;
   }
-
-  .text-body {
-    font-size: 1rem;
-    line-height: 2.1rem;
-  }
 }
 
 @media print, screen and (max-width: 840px) {
@@ -235,6 +229,11 @@ p {
   .button-content.is-large-primary {
     font-size: 1.25rem;
     padding: 1rem 1.5rem;
+  }
+
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.95rem;
   }
 }
 
