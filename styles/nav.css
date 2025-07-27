@@ -7,7 +7,7 @@
   border-bottom: 1px solid var(--code-border-color);
   /* [ 헤더 고정 */
   top: 0;
-  position: fixed;
+  position: sticky;
   z-index: 1000;
   /* ] 헤더 고정 */
   box-shadow: none;
@@ -111,7 +111,7 @@
 }
 
 .menu-drawer {
-  position: fixed;
+  position: sticky;
   top: var(--header-height);
   left: 0;
   right: 0;
