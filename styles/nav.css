@@ -139,6 +139,12 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--background-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-drawer.open a {
+  opacity: 1;
 }
 
 .menu-drawer a:hover {
