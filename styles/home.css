@@ -9,13 +9,11 @@ html, body {
 }
 
 html {
-  background-color: yellow;
+  background: #ffffff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%, rgba(255, 255, 255, 1) 70%);
 }
 
 body {
-  background: #ffffff;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%, rgba(255, 255, 255, 1) 70%);
-
   color: var(--foreground-color);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
