@@ -253,7 +253,7 @@ ul.toc-list, .toc-children ul {
 /* ~ Mobile */
 @media print, screen and (max-width: 840px) {
   .nav {
-    padding: 0 1.5rem;
+    padding: 0 calc(1.5rem - 10px);
   }
 
   .menu {
