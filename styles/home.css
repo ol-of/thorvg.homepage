@@ -258,7 +258,7 @@ p {
   }
 
   .header-h1 {
-      max-width: 58rem;
+    max-width: 50rem;
   }
 
   .text-body {
@@ -270,6 +270,18 @@ p {
   }
 }
 
+@media print, screen and (min-width: 1423px) {
+  .header-h1 {
+    max-width: 58rem;
+  }
+}
+
+@media print, screen and (min-width: 1964px) {
+  .header-h1 {
+    max-width: 65rem;
+  }
+}
+
 @media print, screen and (min-width: 2100px) {
   header {
     padding-right: 11.5rem;
@@ -277,6 +289,12 @@ p {
 
   .main-content {
     padding: 0px 15rem;
+  }
+}
+
+@media print, screen and (min-width: 2200px) {
+  .header-h1 {
+    max-width: 75rem;
   }
 }
 
