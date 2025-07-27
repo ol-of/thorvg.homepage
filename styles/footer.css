@@ -21,6 +21,7 @@ footer .inner {
   color: var(--background-color);
   flex: 1 1 auto;
   min-height: 0;
+  margin-bottom: 1rem;
 }
 
 .tracking-wider {
@@ -145,7 +146,16 @@ footer .inner {
     padding-bottom: 2.8rem !important;
   }
 
+  .flex {
+    margin-bottom: 0.4rem
+  }
+
   .logo-wrapper img {
     width: 140px !important;
+  }
+
+  .link-item svg {
+    width: 24px;
+    height: 24px;
   }
 }
