@@ -66,8 +66,8 @@ footer .inner {
 }
 
 .link-item svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
 }
 
 .logo-wrapper {
@@ -156,8 +156,7 @@ footer .inner {
 @media print, screen and (max-width: 480px) {
   footer {
     height: 300px;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding: 1.5rem !important;
     margin-bottom: 1rem;
   }
 
