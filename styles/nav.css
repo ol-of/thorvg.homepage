@@ -159,7 +159,7 @@
 }
 
 .content-toc {
-  position: fixed;
+  position: sticky;
   top: 5rem;
   margin-top: 20px;
   align-self: flex-start;
