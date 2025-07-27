@@ -7,6 +7,12 @@
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 자동 컬럼 */
 }
 
+@media print, screen and (max-width: 560px) {
+  .collection-small-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
 .collection-small-item, .collection-medium-item {
   border: 1px solid var(--code-border-color);
   border-radius: 0.5rem;

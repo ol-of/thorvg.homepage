@@ -242,7 +242,7 @@
                             <section id="structural-design">
                                 <h2>Structural Design</h2>
                                 <p>ThorVG is designed for a wide range of programs, offering adaptability for integration and use in various applications and systems. It achieves this through a single binary with selectively buildable, modular components in a building block style. This ensures both optimal size and easy maintanence.</p>
-                                <div class="example-container"><img src="image/example_structure.svg" style="max-width: 600px;" /></div>
+                                <div class="example-container limit-width"><img src="image/example_structure.svg" /></div>
                                 <p>If your program includes the main renderer, you can seamlessly utilize ThorVG APIs by transitioning drawing contexts between the main renderer and ThorVG. Throughout these API calls, ThorVG effectively serializes drawing commands among volatile paint nodes. Subsequently, it undertakes synchronous or asynchronous rendering via its backend raster engines. Additionally, ThorVG is adept at handling vector images, including formats like SVG, and it remains adaptable for accommodating additional popular formats as needed. In the rendering process, the library may generate intermediate frame buffers for scene compositing, though only when essential. The accompanying diagram provides a concise overview of how to effectively incorporate ThorVG within your system.</p>
                                 <div class="example-container px-5"><img src="image/example_flow.svg" /></div>
                             </section>
