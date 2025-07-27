@@ -70,6 +70,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .logo-lottie-files {
+    width: 15rem;
+  }
 }
 
 @media (max-width: 640px) {

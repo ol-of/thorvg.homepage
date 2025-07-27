@@ -330,9 +330,7 @@ canvas->push(rect);</code></pre>
                                     <p>​This shape from the example looks as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square">
-                                            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="50" y="50" width="200" height="200" rx="20" ry="20" fill="rgb(170, 253, 193)" />
-                                            </svg>
+                                            <img src="image/example_shape.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -364,21 +362,7 @@ canvas->push(path);</code></pre>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square">
-                                            <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M199 34 
-                                                    L253 143 
-                                                    L374 160 
-                                                    L287 244 
-                                                    L307 365 
-                                                    L199 309 
-                                                    L97 365 
-                                                    L112 245 
-                                                    L26 161 
-                                                    L146 143 
-                                                    Z"
-                                                    fill="rgb(150, 150, 255)" />
-                                            </svg>
+                                            <img src="image/example_path.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -414,16 +398,7 @@ canvas->push(circle);</code></pre>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square">
-                                            <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                                                <defs>
-                                                    <radialGradient id="grad1" cx="200" cy="200" r="150" gradientUnits="userSpaceOnUse">
-                                                    <stop offset="0%" stop-color="white" />
-                                                    <stop offset="100%" stop-color="black" />
-                                                    </radialGradient>
-                                                </defs>
-
-                                                <circle cx="200" cy="200" r="100" fill="url(#grad1)" />
-                                            </svg>
+                                            <img src="image/example_fill.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -458,15 +433,7 @@ canvas->push(rect);</code></pre>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-square">
-                                            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="50" y="50" width="200" height="200" rx="20" ry="20"
-                                                        fill="rgb(100,100,100)"
-                                                        stroke="rgb(50,50,50)"
-                                                        stroke-width="4"
-                                                        stroke-linejoin="round"
-                                                        stroke-linecap="round"
-                                                        stroke-dasharray="7,10" />
-                                            </svg>
+                                            <img src="image/example_stroke.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -511,17 +478,8 @@ canvas->push(scene);</code></pre>
                                     <p>All kinds of Paint type nodes (Shape, Scene and Picture) can be pushed into the Scene as its children. You can scale this logic and build a complex scene by compositing multiple Scenes. In the example, we create a scene-graph tree and we demonstrate how to transform it using <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ae896f56bfa51c98a50eee3f2bb62e41e" target="_blank" rel="noopener noreferrer">translate</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a5c057876185525c5723215f95a3984f2" target="_blank" rel="noopener noreferrer">scale</a>()</code>, <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#a7841fa0c14643e09735d48042ead68f3" target="_blank" rel="noopener noreferrer">rotate</a>()</code> methods. ThorVG also supports the <code><a href="https://thorvg.github.io/thorvg/html/classtvg_1_1Paint.html#ac9f6ba428afe884bcc2861de0a2a96f4" target="_blank" rel="noopener noreferrer">transform</a>()</code> method which expects a transformation matrix.</p>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
-                                        <div class="example-frame-square scale-up">
-                                            <svg width="700" height="700" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
-                                                <g transform="translate(350, 350) scale(0.5) rotate(45)">
-                                                    <!-- Round Rectangle -->
-                                                    <rect x="-235" y="-250" width="400" height="400" rx="50" ry="50" fill="lime" />
-                                                    <!-- Semi-transparent Yellow Circle -->
-                                                    <ellipse cx="-165" cy="-150" rx="200" ry="200" fill="yellow" fill-opacity="0.5" />
-                                                    <!-- Cyan Ellipse -->
-                                                    <ellipse cx="265" cy="250" rx="150" ry="100" fill="cyan" />
-                                                </g>
-                                            </svg>
+                                        <div class="example-frame-square">
+                                            <img src="image/example_scene.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -549,7 +507,7 @@ canvas->push(png);</code></pre>
                                     </div>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
-                                        <div class="example-frame-square scale-up">
+                                        <div class="example-frame-square">
                                             <img src="image/example_picture.png" />
                                         </div>
                                     </div>
@@ -608,26 +566,7 @@ canvas->push(text2);</code></pre>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
                                         <div class="example-frame-rectangle">
-                                            <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-                                                <defs>
-                                                    <linearGradient id="gradient1" x1="0" y1="0.5" x2="1" y2="0.5">
-                                                    <stop offset="0%" stop-color="red" stop-opacity="1" />
-                                                    <stop offset="100%" stop-color="yellow" stop-opacity="1" />
-                                                    </linearGradient>
-                                                </defs>
-
-                                                <g transform="translate(-100, -35)">
-                                                    <!-- Solid color -->
-                                                    <text x="150" y="150" font-family="Arial" font-size="50" fill="black">
-                                                    ThorVG Solid Text
-                                                    </text>
-
-                                                    <!-- Gradient color -->
-                                                    <text x="150" y="250" font-family="Arial" font-size="50" fill="url(#gradient1)">
-                                                    ThorVG Gradient Text
-                                                    </text>
-                                                </g>
-                                            </svg>
+                                            <img src="image/example_text.png" />
                                         </div>
                                     </div>
                                 </section>
@@ -650,8 +589,8 @@ canvas->push(picture);</code></pre>
                                     </div>
                                     <p>The output of the example is as follows.</p>
                                     <div class="example-container">
-                                        <div class="example-frame-square" style="padding: 50px;">
-                                            <img src="image/example_masking.png" style="width: 300px; height: auto;" />
+                                        <div class="example-frame-square">
+                                            <img src="image/example_masking.png" />
                                         </div>
                                     </div>
                                 </section>
