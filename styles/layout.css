@@ -145,8 +145,6 @@
   }
 }
 
-
-
 section[id] {
   scroll-margin-top: 60px; /* 스크롤 이동 시 헤더와 겹치지 않게 */
 }

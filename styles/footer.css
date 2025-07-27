@@ -16,11 +16,8 @@ footer .inner {
 .flex {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   color: var(--background-color);
-}
-
-.gap-y-14 {
-  row-gap: 110px;
 }
 
 .tracking-wider {
@@ -125,14 +122,15 @@ footer .inner {
   .flex-row {
     flex-direction: row;
   }
-
-  .gap-y-14 {
-    row-gap: 3.5rem;
-  }
 }
 
 @media print, screen and (max-width: 480px) {
   footer {
     padding: 0px 1.5rem;
+    padding-top: 2.8rem !important;
+  }
+
+  .logo-wrapper img {
+    width: 140px !important;
   }
 }
