@@ -11,6 +11,7 @@ footer {
 footer .inner {
   position: relative;
   display: block;
+  height: 100%;
 }
 
 .flex {
@@ -18,6 +19,8 @@ footer .inner {
   flex-direction: column;
   justify-content: space-between;
   color: var(--background-color);
+  flex: 1;
+  min-height: 0;
 }
 
 .tracking-wider {
@@ -119,8 +122,10 @@ footer .inner {
     height: 280px;
   }
 
-  .flex-row {
+  .flex {
     flex-direction: row;
+    flex: 0;
+    height: auto;
   }
 }
 
