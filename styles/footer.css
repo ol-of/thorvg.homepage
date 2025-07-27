@@ -125,10 +125,6 @@ footer .inner {
 }
 
 @media print, screen and (min-width: 841px) {
-  footer {
-    height: 280px;
-  }
-
   footer .inner {
     display: block;
     height: auto;
@@ -143,6 +139,7 @@ footer .inner {
 
 @media print, screen and (max-width: 480px) {
   footer {
+    height: 300px;
     padding: 0px 1.5rem;
     padding-top: 2.8rem !important;
     padding-bottom: 2.8rem !important;
