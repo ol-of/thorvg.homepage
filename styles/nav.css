@@ -7,7 +7,7 @@
   border-bottom: 1px solid var(--code-border-color);
   /* [ 헤더 고정 */
   top: 0;
-  position: sticky;
+  position: fixed;
   z-index: 1000;
   /* ] 헤더 고정 */
   box-shadow: none;
@@ -159,7 +159,7 @@
 }
 
 .content-toc {
-  position: sticky;
+  position: fixed;
   top: 5rem;
   margin-top: 20px;
   align-self: flex-start;
