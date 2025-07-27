@@ -7,7 +7,7 @@
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 자동 컬럼 */
 }
 
-@media print, screen and (max-width: 560px) {
+@media print, screen and (max-width: 479px) {
   .collection-small-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
@@ -48,6 +48,7 @@
   font-weight: 500;
   color: #474747;
   text-align: center;
+  line-height: 1.5rem;
 }
 
 .collection-medium-grid {
