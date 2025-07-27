@@ -9,8 +9,8 @@ footer {
 }
 
 footer .inner {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -19,7 +19,7 @@ footer .inner {
   flex-direction: column;
   justify-content: space-between;
   color: var(--background-color);
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 0;
 }
 
@@ -105,6 +105,12 @@ footer .inner {
   }
 }
 
+@media print, screen and (min-width: 1025px) {
+    .nav {
+        padding: 0 5rem;
+    }
+}
+
 @media print, screen and (min-width: 1365px) {
   footer {
     padding: 0px 11.5rem;
@@ -120,6 +126,11 @@ footer .inner {
 @media print, screen and (min-width: 841px) {
   footer {
     height: 280px;
+  }
+
+  footer .inner {
+    display: block;
+    height: auto;
   }
 
   .flex {
