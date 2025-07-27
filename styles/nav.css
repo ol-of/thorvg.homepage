@@ -111,7 +111,7 @@
 }
 
 .menu-drawer {
-  position: sticky;
+  position: fixed;
   top: var(--header-height);
   left: 0;
   right: 0;
