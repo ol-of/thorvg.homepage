@@ -119,13 +119,15 @@
   background-color: var(--foreground-color);
   flex-direction: column;
   z-index: 999;
+  opacity: 0;
   transform: translateY(calc(-100% - var(--header-height)));
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out opacity 0.3s ease-in-out;
   padding: 3rem 0;
 }
 
 .menu-drawer.open {
   display: flex;
+  opacity: 1;
   transform: translateY(0%);
 }
 
@@ -139,12 +141,6 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--background-color);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.menu-drawer.open a {
-  opacity: 1;
 }
 
 .menu-drawer a:hover {
