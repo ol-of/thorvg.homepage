@@ -234,7 +234,7 @@ p {
 
 @media print, screen and (max-width: 480px) {
   .header-h2 {
-    font-size: 3.8rem;
+    font-size: 3rem;
   }
 }
 
