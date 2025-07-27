@@ -81,7 +81,7 @@ footer .inner {
 
 .copyright {
   display: flex;
-  text-align: right;
+  justify-content: flex-end;
 }
 
 .copyright p {
