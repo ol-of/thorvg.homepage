@@ -127,9 +127,10 @@ footer .inner {
 
 @media print, screen and (min-width: 841px) {
   footer {
-    height: 280px;
+    height: auto;
     padding-top: 3.8rem !important;
     padding-bottom: 3.8rem !important;
+    box-sizing: border-box;
   }
 
   footer .inner {
