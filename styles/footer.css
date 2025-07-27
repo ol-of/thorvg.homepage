@@ -4,8 +4,8 @@ footer {
   height: 360px;
   background-color: var(--foreground-color);
   color: var(--background-color);
-  padding-bottom: 3rem !important;
   padding-top: 3.8rem !important;
+  padding-bottom: 3.8rem !important;
 }
 
 footer .inner {
@@ -145,6 +145,7 @@ footer .inner {
   footer {
     padding: 0px 1.5rem;
     padding-top: 2.8rem !important;
+    padding-bottom: 2.8rem !important;
   }
 
   .logo-wrapper img {
